@@ -6,4 +6,6 @@ function imprimir_mensaje(){
 
 imprimir_mensaje "hola mundo."
 
+imprimir_mensaje "Esta es mi primera contribucion (Jorge Rosales)"
+
 
