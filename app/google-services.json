@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "419435467459",
+    "firebase_url": "https://elcatrin-c7c46.firebaseio.com",
+    "project_id": "elcatrin-c7c46",
+    "storage_bucket": "elcatrin-c7c46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419435467459:android:c915f7bb68f0f96edc4876",
+        "android_client_info": {
+          "package_name": "com.elcatrin.app_delivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419435467459-1mfvr9mssbdg92t2jo7nosuha65hj2lu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXRc94rLoh7K2HI79oOmWvQrjNdRt7sjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419435467459-1mfvr9mssbdg92t2jo7nosuha65hj2lu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
