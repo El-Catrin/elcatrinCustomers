@@ -28,6 +28,9 @@ class catalogProducts : AppCompatActivity() {
         db.collection("Products").document("Big_Stacker_Burger_King").get().addOnSuccessListener {
             nameTextView.setText(it.get("Product_Name") as String?)
             priceTextView.setText(it.get("Price") as String?)
+            descTextView.setText(it.get("Product_Desc") as String?)
+            catTextView.setText(it.get("Product_Categ") as String?)
+
         }
 
         }

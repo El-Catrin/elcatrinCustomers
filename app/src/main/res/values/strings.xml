@@ -3,4 +3,5 @@
     <string name="nombre">Nombre</string>
     <string name="precio">Precio</string>
     <string name="catalogo">catalogo</string>
+    <string name="imagen">Imagen</string>
 </resources>
