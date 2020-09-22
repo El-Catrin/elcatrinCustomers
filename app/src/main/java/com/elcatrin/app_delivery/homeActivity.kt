@@ -5,6 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_catalog_products.*
+import kotlinx.android.synthetic.main.activity_catalog_products.nameButton
+import kotlinx.android.synthetic.main.activity_catalogo_empresas.*
+import kotlinx.android.synthetic.main.activity_home.*
 
 
 class homeActivity : AppCompatActivity() {
@@ -26,6 +29,12 @@ class homeActivity : AppCompatActivity() {
             val catalogProducts: Intent = Intent(this, catalogProducts::class.java).apply {
             }
             startActivity(catalogProducts)
+        }
+
+        img_btn_empresas.setOnClickListener {
+            val catalogo_empresas: Intent = Intent (this, CatalogoEmpresas::class.java).apply {
+            }
+            startActivity(catalogo_empresas)
         }
     }
 

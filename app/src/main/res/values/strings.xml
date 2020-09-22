@@ -4,4 +4,7 @@
     <string name="precio">Precio</string>
     <string name="catalogo">catalogo</string>
     <string name="imagen">Imagen</string>
+    <string name="img_empresas">Img_Empresas</string>
+    <string name="restaurantes">Restaurantes</string>
+    <string name="cant_restaurantes">100 Disponibles</string>
 </resources>
