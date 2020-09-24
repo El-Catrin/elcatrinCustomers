@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CatalogoEmpresas"></activity>
+        <activity android:name=".ui.CatalogoEmpresas"></activity>
         <activity android:name=".catalogProducts" />
         <activity android:name=".homeActivity">
             <intent-filter>

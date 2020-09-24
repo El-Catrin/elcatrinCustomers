@@ -3,10 +3,9 @@ package com.elcatrin.app_delivery
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.elcatrin.app_delivery.ui.CatalogoEmpresas
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_catalog_products.*
 import kotlinx.android.synthetic.main.activity_catalog_products.nameButton
-import kotlinx.android.synthetic.main.activity_catalogo_empresas.*
 import kotlinx.android.synthetic.main.activity_home.*
 
 
