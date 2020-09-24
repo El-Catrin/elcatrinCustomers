@@ -2,6 +2,7 @@ package com.elcatrin.app_delivery.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elcatrin.app_delivery.MainAdapter
@@ -18,7 +19,9 @@ class CatalogoEmpresas : AppCompatActivity() {
     //Al declararlo como lateinit var debo inicializarlo antes de usarlo
     private lateinit var adapter: MainAdapter
     //Al declararlo con lazy se inicializa cuando lo necesito, o sea automáticamente
-    private val viewModel by lazy { ViewModelProvider.of(this).get(MainViewModel::class.java) }
+    //private val viewModel by lazy { ViewModelProviders.of(this).get(MainViewModel::class.java) }
+    private val viewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,15 +32,22 @@ class CatalogoEmpresas : AppCompatActivity() {
         //Inicialización del recyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
+        //Método
+        observeData()
 
         //Función Catálogo Empresas
-        cat_Empresas()
+        //cat_Empresas()
+    }
+
+    fun observeData(){
+        viewModel.fetchEmpresaData().observe(this, Observer {
+            adapter.setListData(it)
+            adapter.notifyDataSetChanged()
+        })
     }
 
 
-    private fun cat_Empresas() {
-        title = "Restaurantes"
-
-
-    }
+    //private fun cat_Empresas() {
+    //    title = "Restaurantes"
+    //}
 }
