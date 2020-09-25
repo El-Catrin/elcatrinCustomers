@@ -39,6 +39,7 @@ class MainAdapter(private val context: Context): RecyclerView.Adapter<MainAdapte
             Glide.with(context).load(empresa.Logo_Company).into(itemView.img_logo)
             itemView.text_nombre.text = empresa.Name_Company
             itemView.text_desc.text = empresa.Desc_Company
+            itemView.text_horario.text = empresa.Working_Hours
             itemView.text_cost_min.text = empresa.Min_Cost
         }
     }

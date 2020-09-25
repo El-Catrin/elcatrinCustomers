@@ -14,8 +14,9 @@ class Repo {
                 val logo = document.getString("Logo_Company")
                 val nombre = document.getString("Name_Company")
                 val descripcion = document.getString("Desc_Company")
+                val horario = document.getString("Working_Hours")
                 val min_cost = document.getString("Min_Cost")
-                val empresa = Empresa(logo!!,nombre!!,descripcion!!,min_cost!!)
+                val empresa = Empresa(logo!!,nombre!!,descripcion!!,horario!!,min_cost!!)
                 listData.add(empresa)
             }
             mutableData.value = listData
