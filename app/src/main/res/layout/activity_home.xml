@@ -10,9 +10,9 @@
         android:id="@+id/text_Restaurantes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".catalogProducts"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="155dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".catalogProducts">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -70,6 +70,22 @@
                 android:contentDescription="@string/img_empresas"
                 app:srcCompat="@android:drawable/ic_menu_gallery" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="127dp"
+            android:layout_height="108dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="51dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@+id/LinearRestaurante"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/img_btn_productos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@android:drawable/ic_menu_gallery" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
