@@ -31,6 +31,8 @@ class catalogProducts : AppCompatActivity() {
             descTextView.setText(it.get("Product_Desc") as String?)
             catTextView.setText(it.get("Product_Categ") as String?)
 
+
+
         }
 
         }
