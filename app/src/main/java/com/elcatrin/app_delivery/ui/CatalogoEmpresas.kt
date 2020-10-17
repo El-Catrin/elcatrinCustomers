@@ -1,17 +1,20 @@
 package com.elcatrin.app_delivery.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elcatrin.app_delivery.MainAdapter
 import com.elcatrin.app_delivery.viewmodel.MainViewModel
 import com.elcatrin.app_delivery.R
+import com.elcatrin.app_delivery.catalogProducts
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_catalogo_empresas.*
 
-class CatalogoEmpresas : AppCompatActivity() {
+class CatalogoEmpresas : AppCompatActivity(), MainAdapter.OnEmpresaClickListener {
 
     // Access a Cloud Firestore instance from your Activity
     val db = FirebaseFirestore.getInstance()
@@ -28,9 +31,10 @@ class CatalogoEmpresas : AppCompatActivity() {
         setContentView(R.layout.activity_catalogo_empresas)
 
         //Inicializo el adapter que declare arriba
-        adapter = MainAdapter(this)
+        adapter = MainAdapter(this, this)
         //Inicialización del recyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
         recyclerView.adapter = adapter
         //Método
         observeData()
@@ -44,6 +48,12 @@ class CatalogoEmpresas : AppCompatActivity() {
             adapter.setListData(it)
             adapter.notifyDataSetChanged()
         })
+    }
+
+    override fun onItemClick() {
+        val productos: Intent = Intent(this, catalogProducts::class.java).apply {
+        }
+        startActivity(productos)
     }
 
 
