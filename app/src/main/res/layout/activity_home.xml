@@ -13,7 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:context=".catalogProducts">
-
+<!-- empresa -->
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="0dp"
@@ -66,12 +66,12 @@
             <ImageButton
                 android:id="@+id/img_btn_empresas"
                 android:layout_width="match_parent"
-                android:layout_height="101dp"
+                android:layout_height="89dp"
                 android:contentDescription="@string/img_empresas"
                 app:srcCompat="@android:drawable/ic_menu_gallery" />
 
         </LinearLayout>
-
+<!-- productos -->
         <LinearLayout
             android:layout_width="127dp"
             android:layout_height="108dp"
@@ -85,7 +85,9 @@
                 android:id="@+id/img_btn_productos"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="@string/catalogo"
                 app:srcCompat="@android:drawable/ic_menu_gallery" />
+
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

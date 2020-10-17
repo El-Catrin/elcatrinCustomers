@@ -17,13 +17,4 @@ class MainViewModel: ViewModel() {
         }
         return mutableData
     }
-
-    fun fetchProductosData():LiveData<MutableList<Productos>>{
-        val mutableData2 = MutableLiveData<MutableList<Productos>>()
-        repo.getProductosData().observeForever { productosList ->
-            mutableData2.value = productosList
-        }
-        return mutableData2
-    }
-
 }

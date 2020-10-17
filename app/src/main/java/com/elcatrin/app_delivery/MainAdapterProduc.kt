@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.lista_productos.view.*
 
-class MainAdapterProductos(private val context: Context): RecyclerView.Adapter<MainAdapterProductos.MainViewHolder>() {
+class MainAdapterProduc(private val context: Context): RecyclerView.Adapter<MainAdapterProduc.MainViewHolder>() {
 
     private var dataList = mutableListOf<Productos>()
 
