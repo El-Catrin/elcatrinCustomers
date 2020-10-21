@@ -8,13 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.lista_empresa.view.*
 
-class MainAdapter(private val context: Context, private val itemClickListener: OnEmpresaClickListener): RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
-
+class MainAdapter(private val context: Context): RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
+    //, private val itemClickListener: OnEmpresaClickListener
     private var dataList = mutableListOf<Empresa>()
 
-    interface OnEmpresaClickListener {
-        fun onItemClick()
-    }
+    //interface OnEmpresaClickListener {
+        //fun onItemClick()
+    //}
 
     fun setListData(data:MutableList<Empresa>){
         dataList = data
@@ -41,7 +41,7 @@ class MainAdapter(private val context: Context, private val itemClickListener: O
     inner class MainViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         fun bindView(empresa:Empresa){
 
-            itemView.setOnClickListener { itemClickListener.onItemClick() }
+            //itemView.setOnClickListener { itemClickListener.onItemClick() }
 
             Glide.with(context).load(empresa.Logo_Company).into(itemView.img_logo)
             itemView.text_nombre.text = empresa.Name_Company
