@@ -4,4 +4,6 @@
     <string name="precio">Precio</string>
     <string name="catalogo">catalogo</string>
     <string name="imagen">Imagen</string>
+    //Imagen de activity_home
+    <string name="img_empresas">Img_Empresas</string>
 </resources>
