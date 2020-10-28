@@ -1,6 +1,7 @@
 package com.elcatrin.app_delivery
 
-data class Empresa(val Logo_Company:String = "DEFAULT LOGO",
+data class Empresa(val Cod_Company:String = "DEFAULT COD",
+                   val Logo_Company:String = "DEFAULT LOGO",
                    val Name_Company:String = "DEFAULT NAME",
                    val Desc_Company:String = "DEFAULT DESC",
                    val Company_Banner:String = "DEFAULT BANNER",

@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.activity_catalogo_empresas.*
 
 class CatalogoEmpresas : AppCompatActivity() {
     //, MainAdapter.OnEmpresaClickListener
+
     // Access a Cloud Firestore instance from your Activity
     val db = FirebaseFirestore.getInstance()
 
@@ -31,8 +32,7 @@ class CatalogoEmpresas : AppCompatActivity() {
         setContentView(R.layout.activity_catalogo_empresas)
 
         //Inicializo el adapter que declare arriba
-        adapter = MainAdapter(this)
-        //, this
+        adapter = MainAdapter(this) //, this
         //Inicialización del recyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
@@ -52,6 +52,7 @@ class CatalogoEmpresas : AppCompatActivity() {
     }
 
     //override fun onItemClick() {
+
         //val productos: Intent = Intent(this, catalogProducts::class.java).apply {
         //}
         //startActivity(productos)

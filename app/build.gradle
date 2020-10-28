@@ -47,6 +47,7 @@ dependencies {
     //Quite los glide de acá porque los tengo actualizados abajo para el de empresas
     //implementation 'com.github.bumptech.glide:glide:4.7.1'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
     //kapt 'com.github.bumptech.glide:compiler:4.7.1'
 
     testImplementation 'junit:junit:4.12'
