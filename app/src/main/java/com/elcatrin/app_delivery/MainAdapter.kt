@@ -1,6 +1,7 @@
 package com.elcatrin.app_delivery
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import kotlinx.android.synthetic.main.lista_empresa.view.*
 
 class MainAdapter(private val context: Context): RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
     //, private val itemClickListener: OnEmpresaClickListener
+
     private var dataList = mutableListOf<Empresa>()
 
     //interface OnEmpresaClickListener {
@@ -36,6 +38,20 @@ class MainAdapter(private val context: Context): RecyclerView.Adapter<MainAdapte
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         val empresa:Empresa = dataList[position]
         holder.bindView(empresa)
+
+        //Código para enviar un dato a otra actividad
+        holder.itemView.setOnClickListener {
+            //get position of selected item
+            val model = dataList.get(position)
+            //get Cod_Company of selected item whit intent
+            var gcodigo : String = model.Cod_Company
+
+            //create intent in kotlin
+            val intent = Intent(context, catalogProducts::class.java)
+            //now put all these items whit putExtra intent
+            intent.putExtra("codigoEmpresa", gcodigo)
+            context.startActivity(intent)
+        }
     }
 
     inner class MainViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
@@ -52,3 +68,5 @@ class MainAdapter(private val context: Context): RecyclerView.Adapter<MainAdapte
         }
     }
 }
+
+
