@@ -8,7 +8,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 class Repo {
     fun getEmpresaData():LiveData<MutableList<Empresa>>{
         val mutableData = MutableLiveData<MutableList<Empresa>>()
-        FirebaseFirestore.getInstance().collection("Catalog_Company").whereEqualTo("Categ_Company","Tecnologia").get().addOnSuccessListener { result ->
+        FirebaseFirestore.getInstance().collection("Catalog_Company").get().addOnSuccessListener { result ->
             val listData = mutableListOf<Empresa>()
             for (document in result){
                 val codigo = document.getString("Cod_Company")
