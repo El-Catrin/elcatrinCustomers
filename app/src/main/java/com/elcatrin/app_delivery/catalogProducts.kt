@@ -39,7 +39,7 @@ class catalogProducts : AppCompatActivity() {
         actionBar.setTitle(acodigo)
         nameTextView.text = acodigo
 
-        nameButton.setOnClickListener{
+        //nameButton.setOnClickListener{
 
         db.collection("Catalog_Products")
             .whereEqualTo("Product_Name",acodigo)
@@ -47,8 +47,9 @@ class catalogProducts : AppCompatActivity() {
             for (document in result) {
                 priceTextView.text = document.getString("Product_Name")
              Glide.with(this).load(document.getString("Product_Image")).into(imageView)
-                              }
+
             }
-        }
+            }
+        //}
     }
 }

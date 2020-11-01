@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.CatalogoEmpresas" />
+        <activity android:name=".ui.CatalogoEmpresas"
+            android:parentActivityName=".ui.CatalogoProductos"
+            />
         <activity android:name=".ui.CatalogoProductos"
             android:parentActivityName=".catalogProducts"
             />

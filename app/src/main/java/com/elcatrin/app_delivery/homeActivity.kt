@@ -32,10 +32,10 @@ class homeActivity : AppCompatActivity() {
         }
 
         img_btn_empresas.setOnClickListener {
-           //val catalogo_empresas: Intent = Intent (this, CatalogoEmpresas::class.java).apply {
-            val catalogo_productos: Intent = Intent (this, CatalogoProductos::class.java).apply{
+           val catalogo_empresas: Intent = Intent (this, CatalogoEmpresas::class.java).apply {
+            //val catalogo_productos: Intent = Intent (this, CatalogoProductos::class.java).apply{
             }
-            startActivity(catalogo_productos)
+            startActivity(catalogo_empresas)
         }
     }
 

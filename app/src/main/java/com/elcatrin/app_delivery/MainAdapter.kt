@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.elcatrin.app_delivery.domain.data.network.RepoProductos
+import com.elcatrin.app_delivery.ui.CatalogoProductos
 import kotlinx.android.synthetic.main.lista_empresa.view.*
 
 class MainAdapter(private val context: Context): RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
@@ -47,10 +49,15 @@ class MainAdapter(private val context: Context): RecyclerView.Adapter<MainAdapte
             var gcodigo : String = model.Cod_Company
 
             //create intent in kotlin
-            val intent = Intent(context, catalogProducts::class.java)
+            val intent = Intent(context, CatalogoProductos::class.java)
+
+
+
             //now put all these items whit putExtra intent
             intent.putExtra("codigoEmpresa", gcodigo)
+
             context.startActivity(intent)
+
         }
     }
 
