@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_catalog_products.*
+import kotlinx.android.synthetic.main.lista_productos.*
 
 class catalogProducts : AppCompatActivity() {
 
@@ -32,7 +33,7 @@ class catalogProducts : AppCompatActivity() {
         //also set in manifest file, that which activity to move our another activity
         //now get data from putExtra intent
         var intent = intent
-        val acodigo = intent.getStringExtra("codigoEmpresa")
+        val acodigo = intent.getStringExtra("nombreProducto")
 
         //set codigo in another activity
         actionBar.setTitle(acodigo)
@@ -40,11 +41,13 @@ class catalogProducts : AppCompatActivity() {
 
         nameButton.setOnClickListener{
 
-        db.collection("Catalog_Products").whereEqualTo("Cod_Company",acodigo).get().addOnSuccessListener { result ->
-            //nameTextView.setText(it.get("Product_Name") as String?)
+        db.collection("Catalog_Products")
+            .whereEqualTo("Product_Name",acodigo)
+            .get().addOnSuccessListener { result ->
             for (document in result) {
-                priceTextView.text = document.getString("Cod_Company")
-                }
+                priceTextView.text = document.getString("Product_Name")
+             Glide.with(this).load(document.getString("Product_Image")).into(imageView)
+                              }
             }
         }
     }

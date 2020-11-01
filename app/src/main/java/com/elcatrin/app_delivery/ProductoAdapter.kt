@@ -1,15 +1,22 @@
 package com.elcatrin.app_delivery
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.elcatrin.app_delivery.ui.VistaProductos
 import kotlinx.android.synthetic.main.lista_productos.view.*
 
 class ProductoAdapter(private val context: Context):
     RecyclerView.Adapter<ProductoAdapter.ProductosViewHolder>() {
+
+    /*interface OnProductosClikListener{
+        fun onImagenClick()
+        fun onItemClick()
+    }*/
 
 
 
@@ -26,6 +33,18 @@ private var dataList= mutableListOf<Productos>()
     override fun onBindViewHolder(holder: ProductosViewHolder, position: Int) {
         val productos= dataList[position]
         holder.productosbindView(productos)
+
+        holder.itemView.setOnClickListener{
+            val modelProductos= dataList.get(position)
+
+            var pCodigo: String = modelProductos.Product_Name
+
+            val intentProductos = Intent(context, catalogProducts::class.java)
+            intentProductos.putExtra("nombreProducto",pCodigo)
+            context.startActivity(intentProductos)
+
+
+        }
     }
 
     override fun getItemCount(): Int {
@@ -40,6 +59,7 @@ private var dataList= mutableListOf<Productos>()
 
         fun productosbindView(productos: Productos){
 
+            //itemView.setOnClickListener{intemClickListener.onItemClick()}
 
 
             Glide.with(context).load(productos.Product_Image).into(itemView.imaProductos)

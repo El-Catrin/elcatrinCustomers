@@ -17,6 +17,7 @@ class RepoProductos {
                 val descuento= document.getString("Product_Desc")
                 val precio= document.getString("Product_Price")
                 val codigo= document.getString("Cod_Company")
+                //val codigo_productos = document.getString("Cod_Products")
                 val productos = Productos(imagen!!,nombre!!,descuento!!,precio!!,codigo!!)
                 listData.add(productos)
 
