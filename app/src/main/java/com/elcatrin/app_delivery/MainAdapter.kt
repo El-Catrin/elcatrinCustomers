@@ -51,8 +51,6 @@ class MainAdapter(private val context: Context): RecyclerView.Adapter<MainAdapte
             //create intent in kotlin
             val intent = Intent(context, CatalogoProductos::class.java)
 
-
-
             //now put all these items whit putExtra intent
             intent.putExtra("codigoEmpresa", gcodigo)
 

@@ -14,10 +14,10 @@
             android:parentActivityName=".ui.CatalogoProductos"
             />
         <activity android:name=".ui.CatalogoProductos"
-            android:parentActivityName=".catalogProducts"
+            android:parentActivityName=".ui.VistaProductos"
             />
         <activity
-            android:name=".catalogProducts"/>
+            android:name=".ui.VistaProductos"/>
             <!--android:parentActivityName=".ui.CatalogoEmpresas" />-->
         <activity android:name=".homeActivity">
             <intent-filter>

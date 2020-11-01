@@ -39,7 +39,7 @@ private var dataList= mutableListOf<Productos>()
 
             var pCodigo: String = modelProductos.Product_Name
 
-            val intentProductos = Intent(context, catalogProducts::class.java)
+            val intentProductos = Intent(context, VistaProductos::class.java)
             intentProductos.putExtra("nombreProducto",pCodigo)
             context.startActivity(intentProductos)
 
