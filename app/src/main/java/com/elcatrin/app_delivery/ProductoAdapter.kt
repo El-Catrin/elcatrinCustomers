@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.lista_productos.view.*
 
-class ProductoAdapter(private val context: Context): RecyclerView.Adapter<ProductoAdapter.ProductosViewHolder>() {
+class ProductoAdapter(private val context: Context):
+    RecyclerView.Adapter<ProductoAdapter.ProductosViewHolder>() {
+
+
 
 private var dataList= mutableListOf<Productos>()
     fun setLisData(data:MutableList<Productos>){
@@ -36,12 +39,14 @@ private var dataList= mutableListOf<Productos>()
     inner class ProductosViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView){
 
         fun productosbindView(productos: Productos){
-            Glide.with(context).load(productos.imageUrl).into(itemView.imaProductos)
-            itemView.txtNombreProductos.text= productos.nombrePro
-            itemView.txt_Descripcion.text=productos.Descripcion
-            itemView.txt_Precio.text=productos.Precio
 
 
+
+            Glide.with(context).load(productos.Product_Image).into(itemView.imaProductos)
+            itemView.txtNombreProductos.text= productos.Product_Name
+            itemView.txt_Descripcion.text=productos.Product_Desc
+            itemView.txt_Precio.text=productos.Product_Price
+            //itemView.textCodigo.text=productos.Cod_Company
         }
     }
 }
