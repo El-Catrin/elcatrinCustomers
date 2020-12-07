@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.elcatrin.app_delivery.ui.CatalogoEmpresas
-import com.elcatrin.app_delivery.ui.VistaProductos
+import com.elcatrin.app_delivery.ui.VistaProducto
 import com.google.firebase.firestore.FirebaseFirestore
 
 import kotlinx.android.synthetic.main.activity_home.*

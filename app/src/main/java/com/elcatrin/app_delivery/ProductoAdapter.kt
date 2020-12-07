@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.elcatrin.app_delivery.ui.VistaProductos
+import com.elcatrin.app_delivery.ui.VistaProducto
 import kotlinx.android.synthetic.main.lista_productos.view.*
 
 class ProductoAdapter(private val context: Context):
@@ -39,7 +39,7 @@ private var dataList= mutableListOf<Productos>()
 
             var pCodigo: String = modelProductos.Product_Name
 
-            val intentProductos = Intent(context, VistaProductos::class.java)
+            val intentProductos = Intent(context, VistaProducto::class.java)
             intentProductos.putExtra("nombreProducto",pCodigo)
             context.startActivity(intentProductos)
 
