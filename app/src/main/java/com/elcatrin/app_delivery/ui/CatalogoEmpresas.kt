@@ -1,6 +1,5 @@
 package com.elcatrin.app_delivery.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.elcatrin.app_delivery.MainAdapter
 import com.elcatrin.app_delivery.viewmodel.MainViewModel
 import com.elcatrin.app_delivery.R
-import com.elcatrin.app_delivery.catalogProducts
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_catalogo_empresas.*
 

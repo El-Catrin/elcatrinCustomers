@@ -10,7 +10,7 @@
         android:id="@+id/text_Restaurantes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".catalogProducts"
+        tools:context=".ui.VistaProductos"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="155dp">
 
@@ -37,12 +37,7 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/nameButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/catalogo" />
+
 
                 <Space
                     android:layout_width="8dp"
