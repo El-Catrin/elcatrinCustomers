@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.elcatrin.app_delivery.R
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -18,7 +17,7 @@ class HomeActivity : AppCompatActivity() {
 
     private fun showActivity() {
         img_btn_empresas.setOnClickListener {
-            val catalogoEmpresas: Intent = Intent(this, CatalogoEmpresas::class.java).apply { }
+            val catalogoEmpresas: Intent = Intent(this, StoresActivity::class.java).apply { }
             startActivity(catalogoEmpresas)
         }
     }

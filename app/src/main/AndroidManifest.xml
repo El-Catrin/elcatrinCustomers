@@ -11,12 +11,12 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activity.CartActivity"></activity>
         <activity
-            android:name=".activity.CatalogoEmpresas"
-            android:parentActivityName=".activity.CatalogoProductos" />
+            android:name=".activity.StoresActivity"
+            android:parentActivityName=".activity.ProductsActivity" />
         <activity
-            android:name=".activity.CatalogoProductos"
-            android:parentActivityName=".activity.ProductActivity" />
-        <activity android:name=".activity.ProductActivity" /> <!-- android:parentActivityName=".ui.CatalogoEmpresas" /> -->
+            android:name=".activity.ProductsActivity"
+            android:parentActivityName=".activity.ProductDetailActivity" />
+        <activity android:name=".activity.ProductDetailActivity" /> <!-- android:parentActivityName=".ui.CatalogoEmpresas" /> -->
         <activity android:name=".activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

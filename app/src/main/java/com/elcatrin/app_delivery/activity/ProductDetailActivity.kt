@@ -8,7 +8,7 @@ import com.elcatrin.app_delivery.R
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_vista_productos.*
 
-class ProductActivity : AppCompatActivity() {
+class ProductDetailActivity : AppCompatActivity() {
     val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {

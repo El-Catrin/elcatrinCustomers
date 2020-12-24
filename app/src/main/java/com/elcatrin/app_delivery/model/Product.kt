@@ -1,12 +1,9 @@
 package com.elcatrin.app_delivery.model
 
-import java.util.*
-
 data class Product(
-    val name: String,
-    val image: String,
-    val price: String,
-    val category: String,
-    val delivery_time: Date,
-    val description: String
+    val Product_Image: String = "DEFAULT IMAGEN",
+    val Product_Name: String = "DEFAULT NOMBRE",
+    val Product_Desc: String = "DEFAULT DESCRIPCION",
+    val Product_Price: String = "DEFAULT PRICE",
+    val Cod_Company: String = "DEFAULT CODIGO"
 )

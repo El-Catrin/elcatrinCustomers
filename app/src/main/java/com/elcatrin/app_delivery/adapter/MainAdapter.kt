@@ -8,15 +8,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.elcatrin.app_delivery.R
-import com.elcatrin.app_delivery.activity.CatalogoProductos
-import com.elcatrin.app_delivery.model.Empresa
+import com.elcatrin.app_delivery.activity.ProductsActivity
+import com.elcatrin.app_delivery.model.Store
 import kotlinx.android.synthetic.main.lista_empresa.view.*
 
 class MainAdapter(private val context: Context) :
     RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
-    private var dataList = mutableListOf<Empresa>()
+    private var dataList = mutableListOf<Store>()
 
-    fun setListData(data: MutableList<Empresa>) {
+    fun setListData(data: MutableList<Store>) {
         dataList = data
     }
 
@@ -34,12 +34,12 @@ class MainAdapter(private val context: Context) :
     }
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
-        val empresa: Empresa = dataList[position]
+        val empresa: Store = dataList[position]
         holder.bindView(empresa)
         holder.itemView.setOnClickListener {
             val model = dataList.get(position)
             var gcodigo: String = model.Cod_Company
-            val intent = Intent(context, CatalogoProductos::class.java)
+            val intent = Intent(context, ProductsActivity::class.java)
             intent.putExtra("codigoEmpresa", gcodigo)
 
             context.startActivity(intent)
@@ -47,7 +47,7 @@ class MainAdapter(private val context: Context) :
     }
 
     inner class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bindView(empresa: Empresa) {
+        fun bindView(empresa: Store) {
             Glide.with(context).load(empresa.Logo_Company).into(itemView.img_logo)
             itemView.text_nombre.text = empresa.Name_Company
             itemView.text_desc.text = empresa.Desc_Company

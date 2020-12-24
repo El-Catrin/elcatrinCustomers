@@ -7,13 +7,13 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elcatrin.app_delivery.R
 import com.elcatrin.app_delivery.adapter.ProductoAdapter
-import com.elcatrin.app_delivery.viewmodel.MainViewProductos
+import com.elcatrin.app_delivery.util.ProductRepository
 import kotlinx.android.synthetic.main.activity_catalogo_productos.*
 
-class CatalogoProductos : AppCompatActivity() {
+class ProductsActivity : AppCompatActivity() {
 
     private lateinit var adapter: ProductoAdapter
-    private val viewModel by lazy { ViewModelProviders.of(this).get(MainViewProductos::class.java) }
+    private val viewModel by lazy { ViewModelProviders.of(this).get(ProductRepository::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

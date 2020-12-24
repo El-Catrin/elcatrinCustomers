@@ -8,13 +8,12 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elcatrin.app_delivery.R
 import com.elcatrin.app_delivery.adapter.MainAdapter
-import com.elcatrin.app_delivery.viewmodel.MainViewModel
-import com.google.firebase.firestore.FirebaseFirestore
+import com.elcatrin.app_delivery.util.StoreRepository
 import kotlinx.android.synthetic.main.activity_catalogo_empresas.*
 
-class CatalogoEmpresas : AppCompatActivity() {
+class StoresActivity : AppCompatActivity() {
     private lateinit var adapter: MainAdapter
-    private val viewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
+    private val viewModel by lazy { ViewModelProvider(this).get(StoreRepository::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +28,7 @@ class CatalogoEmpresas : AppCompatActivity() {
     }
 
     fun observeData() {
-        viewModel.fetchEmpresaData().observe(this, Observer {
+        viewModel.fetchStoreDetails().observe(this, Observer {
             adapter.setListData(it)
             adapter.notifyDataSetChanged()
         })
