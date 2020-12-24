@@ -4,9 +4,10 @@
     <string name="precio">Precio</string>
     <string name="catalogo">catalogo</string>
     <string name="imagen">Imagen</string>
-    //Imagen de activity_home
+    <!--    Imagen de activity_home-->
     <string name="img_empresas">Img_Empresas</string>
     <string name="title_activity_productos_imagen">ProductosImagen</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

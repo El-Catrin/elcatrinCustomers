@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CartActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            app:layout_scrollFlags="scroll|enterAlways" />
+
+        <TextView
+            android:id="@+id/txtRestaurantName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="lOCAL"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtBillNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtRestaurantName"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="yes" />
+
+        <include
+            android:id="@+id/cartBillHeader"
+            layout="@layout/recycler_cart_single_element"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/txtBillNo"
+            android:layout_margin="10dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cartBillHeader"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="5dp" />
+
+        <include
+            android:id="@+id/cartTotalBill"
+            layout="@layout/recycler_cart_single_element"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/recyclerCart"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cartTotalBill"
+            android:layout_marginHorizontal="10dp"
+            android:text="additional_charges_included_rs_150_delivery_charges"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cartTotalBill"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="60dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="confirm_order"
+            android:textColor="#fafafa" />
+    </RelativeLayout>
+</ScrollView>
