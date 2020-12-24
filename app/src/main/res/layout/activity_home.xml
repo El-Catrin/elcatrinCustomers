@@ -67,6 +67,22 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="121dp"
+            android:layout_height="103dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="28dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/btn_ubicacion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Mi Ubicación" />
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

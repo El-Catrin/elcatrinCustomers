@@ -3,6 +3,7 @@ package com.elcatrin.app_delivery
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.elcatrin.app_delivery.GoogleMaps.CurrentLocationOnMap
 import com.elcatrin.app_delivery.ui.CatalogoEmpresas
 import com.elcatrin.app_delivery.ui.VistaProducto
 import com.google.firebase.firestore.FirebaseFirestore
@@ -31,6 +32,13 @@ class homeActivity : AppCompatActivity() {
             //val catalogo_productos: Intent = Intent (this, CatalogoProductos::class.java).apply{
             }
             startActivity(catalogo_empresas)
+        }
+
+        btn_ubicacion.setOnClickListener {
+            val ubicacion: Intent = Intent(this, CurrentLocationOnMap::class.java).apply {
+
+            }
+            startActivity(ubicacion)
         }
     }
 
