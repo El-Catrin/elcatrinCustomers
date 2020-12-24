@@ -1,5 +1,6 @@
 package com.elcatrin.app_delivery.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -14,6 +15,7 @@ class ProductActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vista_productos)
         getProduct()
+        addToCart()
     }
 
     private fun getProduct() {
@@ -31,5 +33,12 @@ class ProductActivity : AppCompatActivity() {
                     Glide.with(this).load(document.getString("Product_Image")).into(imageProducto)
                 }
             }
+    }
+
+    fun addToCart(){
+        btnComprar.setOnClickListener {
+            val cartActivity: Intent = Intent(this, CartActivity::class.java).apply { }
+            startActivity(cartActivity)
+        }
     }
 }

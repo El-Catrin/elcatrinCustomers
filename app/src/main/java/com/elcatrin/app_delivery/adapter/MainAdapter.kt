@@ -8,32 +8,27 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.elcatrin.app_delivery.R
-import com.elcatrin.app_delivery.model.Empresa
 import com.elcatrin.app_delivery.activity.CatalogoProductos
+import com.elcatrin.app_delivery.model.Empresa
 import kotlinx.android.synthetic.main.lista_empresa.view.*
 
-class MainAdapter(private val context: Context): RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
-    //, private val itemClickListener: OnEmpresaClickListener
-
+class MainAdapter(private val context: Context) :
+    RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
     private var dataList = mutableListOf<Empresa>()
 
-    //interface OnEmpresaClickListener {
-        //fun onItemClick()
-    //}
-
-    fun setListData(data:MutableList<Empresa>){
+    fun setListData(data: MutableList<Empresa>) {
         dataList = data
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.lista_empresa,parent,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.lista_empresa, parent, false)
         return MainViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        if (dataList.size > 0){
+        if (dataList.size > 0) {
             return dataList.size
-        }else{
+        } else {
             return 0
         }
     }
@@ -41,30 +36,18 @@ class MainAdapter(private val context: Context): RecyclerView.Adapter<MainAdapte
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         val empresa: Empresa = dataList[position]
         holder.bindView(empresa)
-
-        //Código para enviar un dato a otra actividad
         holder.itemView.setOnClickListener {
-            //get position of selected item
             val model = dataList.get(position)
-            //get Cod_Company of selected item whit intent
-            var gcodigo : String = model.Cod_Company
-
-            //create intent in kotlin
+            var gcodigo: String = model.Cod_Company
             val intent = Intent(context, CatalogoProductos::class.java)
-
-            //now put all these items whit putExtra intent
             intent.putExtra("codigoEmpresa", gcodigo)
 
             context.startActivity(intent)
-
         }
     }
 
-    inner class MainViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
-        fun bindView(empresa: Empresa){
-
-            //itemView.setOnClickListener { itemClickListener.onItemClick() }
-
+    inner class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bindView(empresa: Empresa) {
             Glide.with(context).load(empresa.Logo_Company).into(itemView.img_logo)
             itemView.text_nombre.text = empresa.Name_Company
             itemView.text_desc.text = empresa.Desc_Company

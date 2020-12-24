@@ -14,6 +14,7 @@ class MainViewModel: ViewModel() {
         repo.getEmpresaData().observeForever { empresaList ->
             mutableData.value = empresaList
         }
+
         return mutableData
     }
 }

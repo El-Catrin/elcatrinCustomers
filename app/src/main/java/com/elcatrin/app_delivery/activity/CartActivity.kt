@@ -1,6 +1,5 @@
 package com.elcatrin.app_delivery.activity
 
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +12,6 @@ class CartActivity : AppCompatActivity(), Serializable {
     private lateinit var recyclerAdapter: CartAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var layoutManager: LinearLayoutManager
-    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +22,8 @@ class CartActivity : AppCompatActivity(), Serializable {
         val cartName = intent.getStringArrayListExtra("cartName")
         val cartCost = intent.getStringArrayListExtra("cartCost")
 
-        recyclerAdapter = CartAdapter(this@CartActivity, cartName!!, cartCost!!)
-        recyclerView.adapter = recyclerAdapter
-        recyclerView.layoutManager = layoutManager
+//        recyclerAdapter = CartAdapter(this@CartActivity, cartName!!, cartCost!!)
+//        recyclerView.adapter = recyclerAdapter
+//        recyclerView.layoutManager = layoutManager
     }
 }
