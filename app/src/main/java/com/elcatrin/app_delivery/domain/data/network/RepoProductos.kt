@@ -2,9 +2,7 @@ package com.elcatrin.app_delivery.domain.data.network
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.elcatrin.app_delivery.MainAdapter
-import com.elcatrin.app_delivery.Productos
-import com.elcatrin.app_delivery.ui.CatalogoEmpresas
+import com.elcatrin.app_delivery.model.Productos
 import com.google.firebase.firestore.FirebaseFirestore
 
 class RepoProductos {

@@ -1,4 +1,4 @@
-package com.elcatrin.app_delivery.ui
+package com.elcatrin.app_delivery.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProviders
 
 
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.elcatrin.app_delivery.ProductoAdapter
+import com.elcatrin.app_delivery.adapter.ProductoAdapter
 import com.elcatrin.app_delivery.R
 import com.elcatrin.app_delivery.viewmodel.MainViewProductos
 import kotlinx.android.synthetic.main.activity_catalogo_productos.*
@@ -36,8 +36,4 @@ class CatalogoProductos : AppCompatActivity(){
             adapter.notifyDataSetChanged()
         })
     }
-
-
-
-
 }

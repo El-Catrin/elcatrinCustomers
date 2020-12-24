@@ -3,7 +3,7 @@ package com.elcatrin.app_delivery.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.elcatrin.app_delivery.Productos
+import com.elcatrin.app_delivery.model.Productos
 import com.elcatrin.app_delivery.domain.data.network.RepoProductos
 
 class MainViewProductos: ViewModel(){

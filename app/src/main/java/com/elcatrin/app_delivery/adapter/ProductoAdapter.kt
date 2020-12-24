@@ -1,4 +1,4 @@
-package com.elcatrin.app_delivery
+package com.elcatrin.app_delivery.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.elcatrin.app_delivery.ui.VistaProducto
+import com.elcatrin.app_delivery.model.Productos
+import com.elcatrin.app_delivery.R
+import com.elcatrin.app_delivery.activity.VistaProducto
 import kotlinx.android.synthetic.main.lista_productos.view.*
 
 class ProductoAdapter(private val context: Context):

@@ -1,4 +1,4 @@
-package com.elcatrin.app_delivery.ui
+package com.elcatrin.app_delivery.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -12,14 +12,10 @@ class VistaProducto : AppCompatActivity() {
     // Access a Cloud Firestore instance from your Activity
     val db = FirebaseFirestore.getInstance()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vista_productos)
-
-
         Producto()
-
     }
 
     private fun Producto() {
@@ -36,10 +32,7 @@ class VistaProducto : AppCompatActivity() {
                     precioProducto.text = document.getString("Product_Price")
                     descripcionProducto.text = document.getString("Product_Desc")
                     Glide.with(this).load(document.getString("Product_Image")).into(imageProducto)
-
                 }
             }
-
-
     }
 }

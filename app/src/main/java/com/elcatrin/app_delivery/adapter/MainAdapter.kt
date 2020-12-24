@@ -1,4 +1,4 @@
-package com.elcatrin.app_delivery
+package com.elcatrin.app_delivery.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.elcatrin.app_delivery.domain.data.network.RepoProductos
-import com.elcatrin.app_delivery.ui.CatalogoProductos
+import com.elcatrin.app_delivery.R
+import com.elcatrin.app_delivery.model.Empresa
+import com.elcatrin.app_delivery.activity.CatalogoProductos
 import kotlinx.android.synthetic.main.lista_empresa.view.*
 
 class MainAdapter(private val context: Context): RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
@@ -38,7 +39,7 @@ class MainAdapter(private val context: Context): RecyclerView.Adapter<MainAdapte
     }
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
-        val empresa:Empresa = dataList[position]
+        val empresa: Empresa = dataList[position]
         holder.bindView(empresa)
 
         //Código para enviar un dato a otra actividad
@@ -60,7 +61,7 @@ class MainAdapter(private val context: Context): RecyclerView.Adapter<MainAdapte
     }
 
     inner class MainViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
-        fun bindView(empresa:Empresa){
+        fun bindView(empresa: Empresa){
 
             //itemView.setOnClickListener { itemClickListener.onItemClick() }
 

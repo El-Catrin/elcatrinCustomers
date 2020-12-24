@@ -1,4 +1,4 @@
-package com.elcatrin.app_delivery.ui
+package com.elcatrin.app_delivery.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,7 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.elcatrin.app_delivery.MainAdapter
+import com.elcatrin.app_delivery.adapter.MainAdapter
 import com.elcatrin.app_delivery.viewmodel.MainViewModel
 import com.elcatrin.app_delivery.R
 import com.google.firebase.firestore.FirebaseFirestore

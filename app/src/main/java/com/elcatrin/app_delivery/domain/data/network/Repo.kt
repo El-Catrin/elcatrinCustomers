@@ -2,7 +2,7 @@ package com.elcatrin.app_delivery.domain.data.network
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.elcatrin.app_delivery.Empresa
+import com.elcatrin.app_delivery.model.Empresa
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Repo {
