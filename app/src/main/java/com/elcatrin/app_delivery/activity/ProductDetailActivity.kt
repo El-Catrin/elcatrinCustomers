@@ -1,28 +1,29 @@
 package com.elcatrin.app_delivery.activity
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.elcatrin.app_delivery.R
+import com.elcatrin.app_delivery.model.Product
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_vista_productos.*
+import kotlinx.android.synthetic.main.activity_product_detail.*
 
 class ProductDetailActivity : AppCompatActivity() {
+    private val products = ArrayList<Product>()
     val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_vista_productos)
+        setContentView(R.layout.activity_product_detail)
+
         getProduct()
-        addToCart()
+//        setListeners()
     }
 
     private fun getProduct() {
         var intent = intent
         val acodigo = intent.getStringExtra("nombreProducto")
 
-        //Query Firestore para vista productos
         db.collection("Catalog_Products")
             .whereEqualTo("Product_Name", acodigo)
             .get().addOnSuccessListener { result ->
@@ -35,10 +36,18 @@ class ProductDetailActivity : AppCompatActivity() {
             }
     }
 
-    fun addToCart(){
-        btnComprar.setOnClickListener {
-            val cartActivity: Intent = Intent(this, CartActivity::class.java).apply { }
-            startActivity(cartActivity)
-        }
-    }
+//    fun setListeners() {
+//        btnComprar.setOnClickListener {
+//            createProduct()
+//            products.add()
+////            val cartActivity: Intent = Intent(this, CartActivity::class.java).apply { }
+////            startActivity(cartActivity)
+//        }
+//    }
+
+//    private fun createProduct(){
+//
+//
+//        return Product()
+//    }
 }

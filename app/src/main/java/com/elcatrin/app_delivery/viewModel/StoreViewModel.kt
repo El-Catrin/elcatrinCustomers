@@ -1,13 +1,13 @@
-package com.elcatrin.app_delivery.util
+package com.elcatrin.app_delivery.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.elcatrin.app_delivery.database.Stores
+import com.elcatrin.app_delivery.domain.data.network.StoreService
 import com.elcatrin.app_delivery.model.Store
 
-class StoreRepository : ViewModel() {
-    private val repository = Stores()
+class StoreViewModel : ViewModel() {
+    private val repository = StoreService()
 
     fun fetchStoreDetails(): LiveData<MutableList<Store>> {
         val mutableData = MutableLiveData<MutableList<Store>>()

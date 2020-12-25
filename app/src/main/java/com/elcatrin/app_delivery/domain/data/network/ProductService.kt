@@ -1,17 +1,17 @@
-package com.elcatrin.app_delivery.database
+package com.elcatrin.app_delivery.domain.data.network
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.elcatrin.app_delivery.model.Product
 import com.google.firebase.firestore.FirebaseFirestore
 
-class Products {
+class ProductService {
 
-    fun getUserData(): LiveData<MutableList<Product>> {
+    fun getProductByStoreId(storeId: String): LiveData<MutableList<Product>> {
 
-        val mutableData = MutableLiveData<MutableList<Product>>()
+        val products = MutableLiveData<MutableList<Product>>()
         FirebaseFirestore.getInstance().collection("Catalog_Products")
-            .whereEqualTo("Cod_Company", "06")
+            .whereEqualTo("Cod_Company", storeId)
             .get()
             .addOnSuccessListener { result ->
                 val listData: MutableList<Product> = mutableListOf<Product>()
@@ -22,13 +22,14 @@ class Products {
                     val precio = document.getString("Product_Price")
                     val codigo = document.getString("Cod_Company")
                     //val codigo_productos = document.getString("Cod_Products")
-                    val productos = Product(imagen!!, nombre!!, descuento!!, precio!!, codigo!!)
-                    listData.add(productos)
+                    val productsList = Product(imagen!!, nombre!!, descuento!!, precio!!, codigo!!)
+                    listData.add(productsList)
 
                 }
-                mutableData.value = listData
+                products.value = listData
             }
-        return mutableData
+
+        return products
     }
 }
 

@@ -1,9 +1,9 @@
 package com.elcatrin.app_delivery.model
 
 data class Product(
-    val Product_Image: String = "DEFAULT IMAGEN",
-    val Product_Name: String = "DEFAULT NOMBRE",
-    val Product_Desc: String = "DEFAULT DESCRIPCION",
-    val Product_Price: String = "DEFAULT PRICE",
-    val Cod_Company: String = "DEFAULT CODIGO"
+    val id_store: String,
+    val name: String,
+    val price: String,
+    val image: String,
+    val description: String
 )

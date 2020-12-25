@@ -12,8 +12,8 @@ import com.elcatrin.app_delivery.activity.ProductDetailActivity
 import com.elcatrin.app_delivery.model.Product
 import kotlinx.android.synthetic.main.lista_productos.view.*
 
-class ProductoAdapter(private val context: Context) :
-    RecyclerView.Adapter<ProductoAdapter.ProductosViewHolder>() {
+class ProductAdapter(private val context: Context) :
+    RecyclerView.Adapter<ProductAdapter.ProductosViewHolder>() {
 
     private var dataList = mutableListOf<Product>()
 
@@ -28,12 +28,12 @@ class ProductoAdapter(private val context: Context) :
     }
 
     override fun onBindViewHolder(holder: ProductosViewHolder, position: Int) {
-        val productos = dataList[position]
-        holder.productosbindView(productos)
+        val products = dataList[position]
+        holder.productosbindView(products)
 
         holder.itemView.setOnClickListener {
             val modelProductos = dataList.get(position)
-            var pCodigo: String = modelProductos.Product_Name
+            var pCodigo: String = modelProductos.name
             val intentProductos = Intent(context, ProductDetailActivity::class.java)
 
             intentProductos.putExtra("nombreProducto", pCodigo)
@@ -52,10 +52,10 @@ class ProductoAdapter(private val context: Context) :
     inner class ProductosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun productosbindView(product: Product) {
-            Glide.with(context).load(product.Product_Image).into(itemView.imaProductos)
-            itemView.txtNombreProductos.text = product.Product_Name
-            itemView.txt_Descripcion.text = product.Product_Desc
-            itemView.txt_Precio.text = product.Product_Price
+            Glide.with(context).load(product.image).into(itemView.imaProductos)
+            itemView.txtNombreProductos.text = product.name
+            itemView.txt_Descripcion.text = product.description
+            itemView.txt_Precio.text = product.price
         }
     }
 }

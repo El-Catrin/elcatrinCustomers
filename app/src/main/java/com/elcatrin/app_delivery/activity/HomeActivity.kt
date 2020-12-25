@@ -12,10 +12,10 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        showActivity()
+        showStoresActivity()
     }
 
-    private fun showActivity() {
+    private fun showStoresActivity() {
         img_btn_empresas.setOnClickListener {
             val catalogoEmpresas: Intent = Intent(this, StoresActivity::class.java).apply { }
             startActivity(catalogoEmpresas)

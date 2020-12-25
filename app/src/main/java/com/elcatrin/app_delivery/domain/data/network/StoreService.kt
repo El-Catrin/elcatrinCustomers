@@ -1,11 +1,11 @@
-package com.elcatrin.app_delivery.database
+package com.elcatrin.app_delivery.domain.data.network
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.elcatrin.app_delivery.model.Store
 import com.google.firebase.firestore.FirebaseFirestore
 
-class Stores {
+class StoreService {
     fun getEmpresaData(): LiveData<MutableList<Store>> {
         val mutableData = MutableLiveData<MutableList<Store>>()
         FirebaseFirestore.getInstance().collection("Catalog_Company").get()

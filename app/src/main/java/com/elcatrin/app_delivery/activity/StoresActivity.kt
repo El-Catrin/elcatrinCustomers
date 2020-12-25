@@ -8,12 +8,12 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elcatrin.app_delivery.R
 import com.elcatrin.app_delivery.adapter.MainAdapter
-import com.elcatrin.app_delivery.util.StoreRepository
+import com.elcatrin.app_delivery.viewModel.StoreViewModel
 import kotlinx.android.synthetic.main.activity_catalogo_empresas.*
 
 class StoresActivity : AppCompatActivity() {
     private lateinit var adapter: MainAdapter
-    private val viewModel by lazy { ViewModelProvider(this).get(StoreRepository::class.java) }
+    private val viewModel by lazy { ViewModelProvider(this).get(StoreViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
