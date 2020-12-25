@@ -16,4 +16,8 @@ class ProductViewModel : ViewModel() {
         }
         return mutableData
     }
+
+    fun getProductById(productId: String?): Product {
+        return productService.getProductById(productId)
+    }
 }

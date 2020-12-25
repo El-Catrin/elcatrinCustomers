@@ -6,7 +6,7 @@ import com.elcatrin.app_delivery.model.Store
 import com.google.firebase.firestore.FirebaseFirestore
 
 class StoreService {
-    fun getEmpresaData(): LiveData<MutableList<Store>> {
+    fun getStores(): LiveData<MutableList<Store>> {
         val mutableData = MutableLiveData<MutableList<Store>>()
         FirebaseFirestore.getInstance().collection("Catalog_Company").get()
             .addOnSuccessListener { result ->

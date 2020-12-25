@@ -17,8 +17,8 @@ class HomeActivity : AppCompatActivity() {
 
     private fun showStoresActivity() {
         img_btn_empresas.setOnClickListener {
-            val catalogoEmpresas: Intent = Intent(this, StoresActivity::class.java).apply { }
-            startActivity(catalogoEmpresas)
+            val storesActivity: Intent = Intent(this, StoresActivity::class.java).apply { }
+            startActivity(storesActivity)
         }
     }
 }

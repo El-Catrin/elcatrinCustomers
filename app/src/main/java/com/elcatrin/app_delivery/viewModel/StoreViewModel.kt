@@ -7,11 +7,11 @@ import com.elcatrin.app_delivery.domain.data.network.StoreService
 import com.elcatrin.app_delivery.model.Store
 
 class StoreViewModel : ViewModel() {
-    private val repository = StoreService()
+    private val storeService = StoreService()
 
-    fun fetchStoreDetails(): LiveData<MutableList<Store>> {
+    fun getStores(): LiveData<MutableList<Store>> {
         val mutableData = MutableLiveData<MutableList<Store>>()
-        repository.getEmpresaData().observeForever { stores ->
+        storeService.getStores().observeForever { stores ->
             mutableData.value = stores
         }
 

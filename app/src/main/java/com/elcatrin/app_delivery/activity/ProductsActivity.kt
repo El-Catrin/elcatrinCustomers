@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_catalogo_productos.*
 class ProductsActivity : AppCompatActivity() {
 
     private lateinit var adapter: ProductAdapter
-    private val viewModel by lazy { ViewModelProviders.of(this).get(ProductViewModel::class.java) }
+    private val productViewModel by lazy { ViewModelProviders.of(this).get(ProductViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,12 +22,13 @@ class ProductsActivity : AppCompatActivity() {
         adapter = ProductAdapter(this)
         recyclerProductos.layoutManager = LinearLayoutManager(this)
         recyclerProductos.adapter = adapter
-        observeData()
+
+        var storeId = intent.getStringExtra("storeId")
+        getProductsByStoreId(storeId)
     }
 
-    fun observeData() {
-        var storeId = intent.getStringExtra("storeId")
-        viewModel.getProductsByStoreId(storeId).observe(this, Observer {
+    private fun getProductsByStoreId(storeId: String?) {
+        productViewModel.getProductsByStoreId(storeId).observe(this, Observer {
             adapter.setLisData(it)
             adapter.notifyDataSetChanged()
         })

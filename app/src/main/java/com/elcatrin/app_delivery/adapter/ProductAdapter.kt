@@ -13,7 +13,7 @@ import com.elcatrin.app_delivery.model.Product
 import kotlinx.android.synthetic.main.lista_productos.view.*
 
 class ProductAdapter(private val context: Context) :
-    RecyclerView.Adapter<ProductAdapter.ProductosViewHolder>() {
+    RecyclerView.Adapter<ProductAdapter.ProductsViewHolder>() {
 
     private var dataList = mutableListOf<Product>()
 
@@ -21,37 +21,36 @@ class ProductAdapter(private val context: Context) :
         dataList = data
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductosViewHolder {
-        val productoView =
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder {
+        val productView =
             LayoutInflater.from(context).inflate(R.layout.lista_productos, parent, false)
-        return ProductosViewHolder(productoView)
+        return ProductsViewHolder(productView)
     }
 
-    override fun onBindViewHolder(holder: ProductosViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) {
         val products = dataList[position]
-        holder.productosbindView(products)
+        holder.productBindView(products)
 
         holder.itemView.setOnClickListener {
-            val modelProductos = dataList.get(position)
-            var pCodigo: String = modelProductos.name
+            val product = dataList[position]
+            var productId: String = product.id
             val intentProductos = Intent(context, ProductDetailActivity::class.java)
 
-            intentProductos.putExtra("nombreProducto", pCodigo)
+            intentProductos.putExtra("productId", productId)
             context.startActivity(intentProductos)
         }
     }
 
     override fun getItemCount(): Int {
-        return if (dataList.size > 0) {
-            dataList.size
-        } else {
-            0
-        }
+        if (dataList.size > 0)
+            return dataList.size
+
+        return 0
     }
 
-    inner class ProductosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ProductsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun productosbindView(product: Product) {
+        fun productBindView(product: Product) {
             Glide.with(context).load(product.image).into(itemView.imaProductos)
             itemView.txtNombreProductos.text = product.name
             itemView.txt_Descripcion.text = product.description

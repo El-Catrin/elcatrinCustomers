@@ -8,28 +8,52 @@ import com.google.firebase.firestore.FirebaseFirestore
 class ProductService {
 
     fun getProductByStoreId(storeId: String?): LiveData<MutableList<Product>> {
-
         val products = MutableLiveData<MutableList<Product>>()
+
         FirebaseFirestore.getInstance().collection("Catalog_Products")
             .whereEqualTo("Cod_Company", storeId)
             .get()
             .addOnSuccessListener { result ->
                 val listData: MutableList<Product> = mutableListOf<Product>()
-                for (document in result) {
-                    val imagen = document.getString("Product_Image")
-                    val nombre = document.getString("Product_Name")
-                    val descuento = document.getString("Product_Desc")
-                    val precio = document.getString("Product_Price")
-                    val codigo = document.getString("Cod_Company")
-                    //val codigo_productos = document.getString("Cod_Products")
-                    val productsList = Product(imagen!!, nombre!!, descuento!!, precio!!, codigo!!)
-                    listData.add(productsList)
+                for (row in result) {
+                    val id = row.getString("Cod_Product")
+                    val name = row.getString("Product_Name")
+                    val price = row.getString("Product_Price")
+                    val picture = row.getString("Product_Image")
+                    val description = row.getString("Product_Desc")
 
+                    val product =
+                        Product(id!!, storeId!!, name!!, price!!, picture!!, description!!)
+
+                    listData.add(product)
                 }
+
                 products.value = listData
             }
 
         return products
+    }
+
+    fun getProductById(productId: String?): Product {
+        var product = Product()
+
+        FirebaseFirestore.getInstance().collection("Catalog_Products")
+            .whereEqualTo("Cod_Product", productId)
+            .get()
+            .addOnSuccessListener { result ->
+                val p = result.elementAt(0)
+
+                val id = p.getString("Cod_Product")
+                val storeId = p.getString("Cod_Company")
+                val name = p.getString("Product_Name")
+                val price = p.getString("Product_Price")
+                val picture = p.getString("Product_Image")
+                val description = p.getString("Product_Desc")
+
+                product = Product(id!!, storeId!!, name!!, price!!, picture!!, description!!)
+            }
+
+        return product
     }
 }
 
