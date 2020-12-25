@@ -7,19 +7,19 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elcatrin.app_delivery.R
-import com.elcatrin.app_delivery.adapter.MainAdapter
+import com.elcatrin.app_delivery.adapter.StoreAdapter
 import com.elcatrin.app_delivery.viewModel.StoreViewModel
 import kotlinx.android.synthetic.main.activity_catalogo_empresas.*
 
 class StoresActivity : AppCompatActivity() {
-    private lateinit var adapter: MainAdapter
-    private val viewModel by lazy { ViewModelProvider(this).get(StoreViewModel::class.java) }
+    private lateinit var adapter: StoreAdapter
+    private val storeViewModel by lazy { ViewModelProvider(this).get(StoreViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catalogo_empresas)
 
-        adapter = MainAdapter(this)
+        adapter = StoreAdapter(this)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
         recyclerView.adapter = adapter
@@ -27,8 +27,8 @@ class StoresActivity : AppCompatActivity() {
         observeData()
     }
 
-    fun observeData() {
-        viewModel.fetchStoreDetails().observe(this, Observer {
+    private fun observeData() {
+        storeViewModel.fetchStoreDetails().observe(this, Observer {
             adapter.setListData(it)
             adapter.notifyDataSetChanged()
         })

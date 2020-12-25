@@ -7,7 +7,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class ProductService {
 
-    fun getProductByStoreId(storeId: String): LiveData<MutableList<Product>> {
+    fun getProductByStoreId(storeId: String?): LiveData<MutableList<Product>> {
 
         val products = MutableLiveData<MutableList<Product>>()
         FirebaseFirestore.getInstance().collection("Catalog_Products")

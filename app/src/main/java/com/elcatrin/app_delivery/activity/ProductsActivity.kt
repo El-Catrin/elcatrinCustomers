@@ -26,7 +26,7 @@ class ProductsActivity : AppCompatActivity() {
     }
 
     fun observeData() {
-        var storeId = "06"
+        var storeId = intent.getStringExtra("storeId")
         viewModel.getProductsByStoreId(storeId).observe(this, Observer {
             adapter.setLisData(it)
             adapter.notifyDataSetChanged()
