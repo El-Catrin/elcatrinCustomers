@@ -34,13 +34,14 @@ class ProductService {
         return products
     }
 
-    fun getProductById(productId: String?): Product {
-        var product = Product()
+    fun getProductById(productId: String?): LiveData<MutableList<Product>> {
+        val products = MutableLiveData<MutableList<Product>>()
 
         FirebaseFirestore.getInstance().collection("Catalog_Products")
             .whereEqualTo("Cod_Product", productId)
             .get()
             .addOnSuccessListener { result ->
+                val listData: MutableList<Product> = mutableListOf<Product>()
                 val p = result.elementAt(0)
 
                 val id = p.getString("Cod_Product")
@@ -50,10 +51,12 @@ class ProductService {
                 val picture = p.getString("Product_Image")
                 val description = p.getString("Product_Desc")
 
-                product = Product(id!!, storeId!!, name!!, price!!, picture!!, description!!)
+                val product = Product(id!!, storeId!!, name!!, price!!, picture!!, description!!)
+                listData.add(product)
+                products.value = listData
             }
 
-        return product
+        return products
     }
 }
 

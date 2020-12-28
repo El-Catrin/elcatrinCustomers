@@ -1,4 +1,4 @@
-package com.elcatrin.app_delivery.viewModel
+package com.elcatrin.app_delivery.ViewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -11,13 +11,17 @@ class ProductViewModel : ViewModel() {
 
     fun getProductsByStoreId(storeId: String?): LiveData<MutableList<Product>> {
         val mutableData = MutableLiveData<MutableList<Product>>()
-        productService.getProductByStoreId(storeId).observeForever { userList ->
-            mutableData.value = userList
+        productService.getProductByStoreId(storeId).observeForever { productList ->
+            mutableData.value = productList
         }
         return mutableData
     }
 
-    fun getProductById(productId: String?): Product {
-        return productService.getProductById(productId)
+    fun getProductById(productId: String?): MutableLiveData<MutableList<Product>> {
+        val mutableData = MutableLiveData<MutableList<Product>>()
+        productService.getProductById(productId).observeForever { productList ->
+            mutableData.value = productList
+        }
+        return mutableData
     }
 }

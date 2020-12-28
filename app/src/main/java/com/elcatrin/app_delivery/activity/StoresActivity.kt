@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elcatrin.app_delivery.R
 import com.elcatrin.app_delivery.adapter.StoreAdapter
-import com.elcatrin.app_delivery.viewModel.StoreViewModel
+import com.elcatrin.app_delivery.ViewModel.StoreViewModel
 import kotlinx.android.synthetic.main.activity_catalogo_empresas.*
 
 class StoresActivity : AppCompatActivity() {
