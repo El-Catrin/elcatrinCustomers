@@ -1,4 +1,4 @@
-package com.elcatrin.app_delivery.ViewModel
+package com.elcatrin.app_delivery.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

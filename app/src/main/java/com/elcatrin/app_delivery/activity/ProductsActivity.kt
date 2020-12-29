@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elcatrin.app_delivery.R
 import com.elcatrin.app_delivery.adapter.ProductAdapter
-import com.elcatrin.app_delivery.ViewModel.ProductViewModel
+import com.elcatrin.app_delivery.viewModel.ProductViewModel
 import kotlinx.android.synthetic.main.activity_catalogo_productos.*
 
 class ProductsActivity : AppCompatActivity() {
