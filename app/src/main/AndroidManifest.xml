@@ -9,17 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".ui.CatalogoEmpresas"
-            android:parentActivityName=".ui.CatalogoProductos"
-            />
-        <activity android:name=".ui.CatalogoProductos"
-            android:parentActivityName=".ui.VistaProducto"
-            />
+        <activity android:name=".activity.CartActivity"></activity>
         <activity
-            android:name=".ui.VistaProducto"/>
-            <!--android:parentActivityName=".ui.CatalogoEmpresas" />-->
-        <activity android:name=".homeActivity">
+            android:name=".activity.StoresActivity"
+            android:parentActivityName=".activity.ProductsActivity" />
+        <activity
+            android:name=".activity.ProductsActivity"
+            android:parentActivityName=".activity.ProductDetailActivity" />
+        <activity android:name=".activity.ProductDetailActivity" /> <!-- android:parentActivityName=".ui.CatalogoEmpresas" /> -->
+        <activity android:name=".activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
