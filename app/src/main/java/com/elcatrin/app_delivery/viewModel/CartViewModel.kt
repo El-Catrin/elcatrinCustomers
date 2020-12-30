@@ -20,5 +20,8 @@ class CartViewModel {
             productList.add(product)
             Log.d("ADD", "${product.name} added")
         }
+
+        fun placeOrder() {
+        }
     }
 }
