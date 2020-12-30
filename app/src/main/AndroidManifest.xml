@@ -36,7 +36,7 @@
 
         <activity
             android:name=".GoogleMaps.CurrentLocationOnMap"
-            android:label="@string/title_activity_current_location_on_map"></activity>
+            android:label="@string/title_activity_current_location_on_map" />
         <activity
             android:name=".ui.CatalogoEmpresas"
             android:parentActivityName=".ui.CatalogoProductos" />
