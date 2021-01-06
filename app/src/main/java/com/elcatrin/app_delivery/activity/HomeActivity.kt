@@ -3,7 +3,9 @@ package com.elcatrin.app_delivery.activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -21,9 +23,9 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        configureToolBar()
         setListeners()
-        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
-        setSupportActionBar(toolbar)
+        Log.d("APP STATUS", "Started")
     }
 
     private fun setListeners() {
@@ -39,8 +41,17 @@ class HomeActivity : AppCompatActivity() {
         // add button for cart access temporarily
     }
 
+    private fun configureToolBar() {
+        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
+        setSupportActionBar(toolbar)
+    }
+
+    fun onShoppingCartClick(mi: MenuItem?) {
+        val cartActivity: Intent = Intent(this, CartActivity::class.java).apply { }
+        startActivity(cartActivity)
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         return true
     }

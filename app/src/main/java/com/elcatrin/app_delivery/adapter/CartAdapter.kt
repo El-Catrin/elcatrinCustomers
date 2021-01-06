@@ -9,29 +9,29 @@ import androidx.recyclerview.widget.RecyclerView
 import com.elcatrin.app_delivery.R
 
 class CartAdapter(
-    val context: Context,
-    private val cartName: java.util.ArrayList<String>,
-    private val cartCost: java.util.ArrayList<String>
+    val context: Context
 ) : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
     private var totalSum = 0
+
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.cart_item, parent, false)
+        return CartViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        return 0
+    }
+
+    override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
+        holder.txtProductName.text = "0"
+        holder.txtProductCost.text = "0"
+    }
 
     class CartViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val txtProductName: TextView = view.findViewById(R.id.txtProductName)
         val txtProductCost: TextView = view.findViewById(R.id.txtProductCost)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.recycler_cart_single_element, parent, false)
-        return CartViewHolder(view)
-    }
-
-    override fun getItemCount(): Int {
-        return cartName.size
-    }
-
-    override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
-        holder.txtProductName.text = "${position + 1}. ${cartName[position]}"
-        holder.txtProductCost.text = "Rs. ${cartCost[position]}"
-    }
 }

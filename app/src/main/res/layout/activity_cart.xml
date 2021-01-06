@@ -16,71 +16,22 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark"
-            app:layout_scrollFlags="scroll|enterAlways" />
+            android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
-        <TextView
-            android:id="@+id/txtRestaurantName"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/toolbar"
-            android:layout_margin="10dp"
-            android:gravity="center"
-            android:text="lOCAL"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txtBillNo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtRestaurantName"
-            android:layout_margin="5dp"
-            android:gravity="center"
-            android:text="yes" />
-
-        <include
-            android:id="@+id/cartBillHeader"
-            layout="@layout/recycler_cart_single_element"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/txtBillNo"
-            android:layout_margin="10dp" />
+            android:text="Place Order" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerCart"
-            android:layout_width="match_parent"
+            android:layout_width="395dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/cartBillHeader"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp">
 
-        <include
-            android:id="@+id/cartTotalBill"
-            layout="@layout/recycler_cart_single_element"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_below="@+id/recyclerCart"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="10dp" />
+        </androidx.recyclerview.widget.RecyclerView>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/cartTotalBill"
-            android:layout_marginHorizontal="10dp"
-            android:text="additional_charges_included_rs_150_delivery_charges"
-            android:textSize="12sp" />
-
-        <Button
-            android:id="@+id/btnOrder"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/cartTotalBill"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="60dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="confirm_order"
-            android:textColor="#fafafa" />
     </RelativeLayout>
 </ScrollView>

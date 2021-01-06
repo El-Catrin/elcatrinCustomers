@@ -10,20 +10,20 @@ import com.bumptech.glide.Glide
 import com.elcatrin.app_delivery.R
 import com.elcatrin.app_delivery.activity.ProductDetailActivity
 import com.elcatrin.app_delivery.model.Product
-import kotlinx.android.synthetic.main.lista_productos.view.*
+import kotlinx.android.synthetic.main.recycler_product.view.*
 
 class ProductAdapter(private val context: Context) :
     RecyclerView.Adapter<ProductAdapter.ProductsViewHolder>() {
 
     private var dataList = mutableListOf<Product>()
 
-    fun setLisData(data: MutableList<Product>) {
+    fun setListData(data: MutableList<Product>) {
         dataList = data
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder {
         val productView =
-            LayoutInflater.from(context).inflate(R.layout.lista_productos, parent, false)
+            LayoutInflater.from(context).inflate(R.layout.recycler_product, parent, false)
         return ProductsViewHolder(productView)
     }
 
@@ -34,10 +34,10 @@ class ProductAdapter(private val context: Context) :
         holder.itemView.setOnClickListener {
             val product = dataList[position]
             var productId: String = product.id
-            val intentProductos = Intent(context, ProductDetailActivity::class.java)
+            val intentProducts = Intent(context, ProductDetailActivity::class.java)
 
-            intentProductos.putExtra("productId", productId)
-            context.startActivity(intentProductos)
+            intentProducts.putExtra("productId", productId)
+            context.startActivity(intentProducts)
         }
     }
 
