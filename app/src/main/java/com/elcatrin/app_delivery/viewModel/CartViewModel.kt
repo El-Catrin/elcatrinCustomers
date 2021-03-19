@@ -25,6 +25,15 @@ class CartViewModel {
             Log.d("ADD", "${product.name} added")
         }
 
+        fun getTotal(): Double {
+            var total = 0.0
+
+            for(product in productList){
+                total += product.price.toDouble()
+            }
+            return total
+        }
+
         fun placeOrder() {
         }
     }

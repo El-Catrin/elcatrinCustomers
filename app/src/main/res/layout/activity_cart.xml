@@ -24,6 +24,13 @@
             android:layout_height="wrap_content"
             android:text="Place Order" />
 
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="Total" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerCart"
             android:layout_width="395dp"

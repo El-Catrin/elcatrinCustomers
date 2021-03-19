@@ -13,7 +13,6 @@ class CartAdapter(
 ) : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
     private var totalSum = 0
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.cart_item, parent, false)
