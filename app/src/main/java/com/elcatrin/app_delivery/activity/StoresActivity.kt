@@ -29,7 +29,7 @@ class StoresActivity : AppCompatActivity() {
 
     private fun observeData() {
         storeViewModel.getStores().observe(this, Observer {
-            adapter.setListData(it)
+            adapter.setStores(it)
             adapter.notifyDataSetChanged()
         })
     }

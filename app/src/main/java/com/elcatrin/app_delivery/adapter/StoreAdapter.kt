@@ -16,7 +16,7 @@ class StoreAdapter(private val context: Context) :
     RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
     private var stores = mutableListOf<Store>()
 
-    fun setListData(data: MutableList<Store>) {
+    fun setStores(data: MutableList<Store>) {
         stores = data
     }
 
