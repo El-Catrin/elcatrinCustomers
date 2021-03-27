@@ -32,7 +32,7 @@ class ProductDetailActivity : AppCompatActivity() {
             var p = it[0]
             product = p
             nombreProducto.text = product.name
-            precioProducto.text = product.price
+            precioProducto.text = product.price.toString()
             descripcionProducto.text = product.description
             Glide.with(this).load(product.image).into(imageProducto)
         })

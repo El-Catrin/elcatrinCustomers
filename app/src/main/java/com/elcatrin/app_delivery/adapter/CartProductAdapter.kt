@@ -12,8 +12,8 @@ import com.elcatrin.app_delivery.activity.ProductDetailActivity
 import com.elcatrin.app_delivery.model.Product
 import kotlinx.android.synthetic.main.recycler_product.view.*
 
-class ProductAdapter(private val context: Context) :
-    RecyclerView.Adapter<ProductAdapter.ProductsViewHolder>() {
+class CartProductAdapter(private val context: Context) :
+    RecyclerView.Adapter<CartProductAdapter.ProductsViewHolder>() {
 
     private var dataList = mutableListOf<Product>()
 
@@ -30,15 +30,6 @@ class ProductAdapter(private val context: Context) :
     override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) {
         val products = dataList[position]
         holder.productBindView(products)
-
-        holder.itemView.setOnClickListener {
-            val product = dataList[position]
-            var productId: String = product.id
-            val intentProducts = Intent(context, ProductDetailActivity::class.java)
-
-            intentProducts.putExtra("productId", productId)
-            context.startActivity(intentProducts)
-        }
     }
 
     override fun getItemCount(): Int {
