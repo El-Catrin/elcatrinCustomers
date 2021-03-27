@@ -29,7 +29,7 @@ class ProductsActivity : AppCompatActivity() {
 
     private fun getProductsByStoreId(storeId: String?) {
         productViewModel.getProductsByStoreId(storeId).observe(this, Observer {
-            adapter.setLisData(it)
+            adapter.setListData(it)
             adapter.notifyDataSetChanged()
         })
     }

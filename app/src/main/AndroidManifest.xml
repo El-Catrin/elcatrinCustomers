@@ -22,6 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -37,7 +38,9 @@
         <activity
             android:name=".activity.CurrentLocationOnMap"
             android:label="@string/title_activity_current_location_on_map" />
-        <activity android:name=".activity.CartActivity" />
+    
+        <activity android:name=".activity.CartActivity"/>
+
         <activity
             android:name=".activity.StoresActivity"
             android:parentActivityName=".activity.ProductsActivity" />
@@ -45,7 +48,9 @@
             android:name=".activity.ProductsActivity"
             android:parentActivityName=".activity.ProductDetailActivity" />
         <activity android:name=".activity.ProductDetailActivity" /> <!-- android:parentActivityName=".ui.CatalogoEmpresas" /> -->
-        <activity android:name=".activity.HomeActivity">
+        <activity android:name=".activity.HomeActivity"/>
+        <activity android:name=".activity.AuthActivity"
+            android:parentActivityName=".activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

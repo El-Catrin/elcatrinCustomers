@@ -6,13 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".activity.homeActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:titleTextColor="@android:color/white"></androidx.appcompat.widget.Toolbar>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/text_Restaurantes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.VistaProductos"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="155dp">
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="86dp">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -22,11 +30,13 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
+            android:fitsSystemWindows="true"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
 
             <Space
                 android:layout_width="match_parent"
@@ -36,7 +46,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
-
 
 
                 <Space
@@ -53,7 +62,7 @@
             android:layout_width="121dp"
             android:layout_height="103dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="104dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -61,10 +70,9 @@
             <ImageButton
                 android:id="@+id/img_btn_empresas"
                 android:layout_width="match_parent"
-                android:layout_height="101dp"
+                android:layout_height="match_parent"
                 android:contentDescription="@string/img_empresas"
                 app:srcCompat="@android:drawable/ic_menu_gallery" />
-
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

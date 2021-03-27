@@ -16,9 +16,22 @@ class CartViewModel {
     companion object {
         private var productList: MutableList<Product> = mutableListOf<Product>()
 
+        fun getShoppingList(): MutableList<Product> {
+            return productList
+        }
+
         fun addProduct(product: Product) {
             productList.add(product)
             Log.d("ADD", "${product.name} added")
+        }
+
+        fun getTotal(): Double {
+            var total = 0.0
+
+            for(product in productList){
+                total += product.price.toDouble()
+            }
+            return total
         }
 
         fun placeOrder() {
