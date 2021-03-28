@@ -54,7 +54,7 @@ class ProductAdapter(private val context: Context) :
             Glide.with(context).load(product.image).into(itemView.imaProductos)
             itemView.txtNombreProductos.text = product.name
             itemView.txt_Descripcion.text = product.description
-            itemView.txt_Precio.text = product.price
+            itemView.txt_Precio.text = product.price.toString()
         }
     }
 }

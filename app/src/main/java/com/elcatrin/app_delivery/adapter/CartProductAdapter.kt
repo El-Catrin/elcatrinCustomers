@@ -1,16 +1,14 @@
 package com.elcatrin.app_delivery.adapter
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.elcatrin.app_delivery.R
-import com.elcatrin.app_delivery.activity.ProductDetailActivity
 import com.elcatrin.app_delivery.model.Product
-import kotlinx.android.synthetic.main.recycler_product.view.*
+import kotlinx.android.synthetic.main.recycler_cart_product.view.*
 
 class CartProductAdapter(private val context: Context) :
     RecyclerView.Adapter<CartProductAdapter.ProductsViewHolder>() {
@@ -23,13 +21,18 @@ class CartProductAdapter(private val context: Context) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductsViewHolder {
         val productView =
-            LayoutInflater.from(context).inflate(R.layout.recycler_product, parent, false)
+            LayoutInflater.from(context).inflate(R.layout.recycler_cart_product, parent, false)
         return ProductsViewHolder(productView)
     }
 
     override fun onBindViewHolder(holder: ProductsViewHolder, position: Int) {
-        val products = dataList[position]
-        holder.productBindView(products)
+        val product = dataList[position]
+        holder.productBindView(product)
+
+        holder.itemView.remove_product_button.setOnClickListener {
+            dataList.remove(product)
+            notifyDataSetChanged()
+        }
     }
 
     override fun getItemCount(): Int {
@@ -42,10 +45,10 @@ class CartProductAdapter(private val context: Context) :
     inner class ProductsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun productBindView(product: Product) {
-            Glide.with(context).load(product.image).into(itemView.imaProductos)
-            itemView.txtNombreProductos.text = product.name
-            itemView.txt_Descripcion.text = product.description
-            itemView.txt_Precio.text = product.price
+            Glide.with(context).load(product.image).into(itemView.background_image)
+            itemView.product_name_txt.text = product.name
+            itemView.product_description_txt.text = product.description
+            itemView.product_price_txt.text = product.price.toString()
         }
     }
 }

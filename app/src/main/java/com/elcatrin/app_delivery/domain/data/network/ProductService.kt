@@ -18,7 +18,7 @@ class ProductService {
                 for (row in result) {
                     val id = row.getString("Cod_Product")
                     val name = row.getString("Product_Name")
-                    val price = row.getString("Product_Price")
+                    val price = row.getDouble("Product_Price")
                     val picture = row.getString("Product_Image")
                     val description = row.getString("Product_Desc")
 
@@ -41,13 +41,13 @@ class ProductService {
             .whereEqualTo("Cod_Product", productId)
             .get()
             .addOnSuccessListener { result ->
-                val listData: MutableList<Product> = mutableListOf<Product>()
+                val listData = mutableListOf<Product>()
                 val p = result.elementAt(0)
 
                 val id = p.getString("Cod_Product")
                 val storeId = p.getString("Cod_Company")
                 val name = p.getString("Product_Name")
-                val price = p.getString("Product_Price")
+                val price = p.getDouble("Product_Price")
                 val picture = p.getString("Product_Image")
                 val description = p.getString("Product_Desc")
 
