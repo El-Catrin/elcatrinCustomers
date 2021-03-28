@@ -34,6 +34,7 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
     //variable global para nuestra ubicación actual
     var currentLocation: Location? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_current_location_on_map)
@@ -73,7 +74,8 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
         permissions: Array<out String>,
         grantResults: IntArray
     ) {
-       when(requestCode) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when(requestCode) {
            1000 -> if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                fetchLocation()
            }
