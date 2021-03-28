@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Menu"
+        android:onClick="onHomePageClick"
+        app:showAsAction="ifRoom"
+       />
+
+    <item
+        android:id="@+id/navigation_shoppingCart"
+        android:icon="@drawable/ic_baseline_local_grocery_store_24"
+        android:title="Carrito"
+        android:onClick="onShoppingCartClick"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/navigation_userLocation"
+        android:icon="@drawable/ic_baseline_location_on_24"
+        android:title="Ubicacion"
+        android:onClick="onCurrentLocation"
+        app:showAsAction="ifRoom"
+        />
+
+
+    <item
+        android:id="@+id/navigation_orderList"
+        android:icon="@drawable/ic_baseline_receipt_long_24"
+        android:title="Orden"
+        app:showAsAction="ifRoom"
+        />
+
+
+</menu>
+
+
+
+
+
