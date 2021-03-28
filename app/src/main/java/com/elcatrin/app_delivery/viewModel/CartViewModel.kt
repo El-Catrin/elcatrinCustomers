@@ -3,11 +3,13 @@ package com.elcatrin.app_delivery.viewModel
 import android.util.Log
 import com.elcatrin.app_delivery.model.Order
 import com.elcatrin.app_delivery.model.Product
+import com.elcatrin.app_delivery.model.ProductInOrder
 
 class CartViewModel {
 
     companion object {
-        private var productList: MutableList<Product> = mutableListOf<Product>()
+        private var productList = mutableListOf<Product>()
+        private var order = Order()
 
         fun getShoppingList(): MutableList<Product> {
             return productList
@@ -28,12 +30,19 @@ class CartViewModel {
         }
 
         fun createOrder() {
-            val products = mutableMapOf<String, Double>()
-            for(product in productList)
-                products[product.id] = product.price
+            val products = mutableListOf<ProductInOrder>()
+            for (p in productList) {
+                products.add(ProductInOrder(p.id, p.price))
+            }
 
-            val order = Order("userId", "storeId", "direction", this.getTotal(), "1h", products)
+            this.order = Order("userId", "storeId", "direction", this.getTotal(), "1h", products
+            )
+
             Log.d("Order Created", order.deliveryCost.toString())
+        }
+
+        fun getOrder(): Order {
+            return this.order
         }
     }
 }

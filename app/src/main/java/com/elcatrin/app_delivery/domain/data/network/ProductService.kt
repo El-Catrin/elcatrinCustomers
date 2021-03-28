@@ -41,7 +41,7 @@ class ProductService {
             .whereEqualTo("Cod_Product", productId)
             .get()
             .addOnSuccessListener { result ->
-                val listData: MutableList<Product> = mutableListOf<Product>()
+                val listData = mutableListOf<Product>()
                 val p = result.elementAt(0)
 
                 val id = p.getString("Cod_Product")

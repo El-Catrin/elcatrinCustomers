@@ -6,5 +6,13 @@ data class Order(
     val direction: String,
     val deliveryCost: Double,
     val deliveryTime: String,
-    val products: MutableMap<String, Double>
-)
+    val products: MutableList<ProductInOrder>
+) {
+    constructor() : this(
+        "",
+        "", "",
+        0.0,
+        "",
+        mutableListOf(ProductInOrder())
+    )
+}
