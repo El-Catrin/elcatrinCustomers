@@ -21,7 +21,13 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.activity_current_location_on_map.*
 import java.util.*
+
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+
+val uid = FirebaseAuth.getInstance().currentUser?.uid
 
 class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
     //Creamos una variable para que cada vez que movamos el marcador, sea una nueva posición
@@ -35,6 +41,8 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
     var currentLocation: Location? = null
 
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_current_location_on_map)
@@ -45,6 +53,10 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         fetchLocation()
+
+        guardarUbicacion.setOnClickListener {
+
+        }
     }
 
     //Función para decirle que nos debe dar permisos
@@ -104,6 +116,9 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
         //Creo un objeto latlong con la ubicación actual
         val latlong = LatLng(currentLocation?.latitude!!, currentLocation?.longitude!!)
         drawMarker(latlong)
+
+        FirebaseFirestore.getInstance().collection("User_GPS").document("01 - FG").update("Longitude",currentLocation?.longitude!!,
+            "Latitude",currentLocation?.latitude!!).addOnSuccessListener {  }
 
         //Arrastrar el marcador
         mMap.setOnMarkerDragListener(object : GoogleMap.OnMarkerDragListener {
