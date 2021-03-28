@@ -3,6 +3,7 @@ package com.elcatrin.app_delivery.activity
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -12,7 +13,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.elcatrin.app_delivery.R
 import com.elcatrin.app_delivery.viewModel.CartViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_home.*
+import com.elcatrin.app_delivery.activity.CurrentLocationOnMap
 
 
 class HomeActivity : AppCompatActivity() {
@@ -44,6 +47,12 @@ class HomeActivity : AppCompatActivity() {
     private fun configureToolBar() {
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
+
+    }
+
+    fun onHomePageClick(mi: MenuItem?) {
+        val HomeActivity: Intent = Intent(this, HomeActivity::class.java).apply { }
+        startActivity(HomeActivity)
     }
 
     fun onShoppingCartClick(mi: MenuItem?) {
@@ -51,8 +60,20 @@ class HomeActivity : AppCompatActivity() {
         startActivity(cartActivity)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main, menu)
-        return true
+    fun onCurrentLocation(mi: MenuItem?) {
+        val currentLocationOnMap: Intent = Intent(this, CurrentLocationOnMap::class.java).apply { }
+        startActivity(currentLocationOnMap)
     }
+
+    /*
+    fun onOrderList(mi: MenuItem?) {
+        val orderList: Intent = Intent(this, ProductDetailActivity::class.java).apply { }
+        startActivity(orderList)
+    }
+*/
+
+
+
+
+
 }

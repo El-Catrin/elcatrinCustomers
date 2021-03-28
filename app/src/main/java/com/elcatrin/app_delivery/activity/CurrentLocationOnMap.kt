@@ -1,10 +1,14 @@
 package com.elcatrin.app_delivery.activity
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Geocoder
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import android.view.View
+import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import com.elcatrin.app_delivery.R
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -140,4 +144,6 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
         val addresses = geoCoder.getFromLocation(lat, lon, 1)
         return addresses[0].getAddressLine(0).toString()
     }
+
+
 }
