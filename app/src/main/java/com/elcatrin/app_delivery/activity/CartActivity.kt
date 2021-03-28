@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elcatrin.app_delivery.R
 import com.elcatrin.app_delivery.adapter.CartProductAdapter
+import com.elcatrin.app_delivery.model.Order
 import com.elcatrin.app_delivery.viewModel.CartViewModel
 import kotlinx.android.synthetic.main.activity_cart.*
+import kotlinx.android.synthetic.main.activity_home.*
 import java.io.Serializable
 
 class CartActivity : AppCompatActivity(), Serializable {
@@ -21,8 +23,17 @@ class CartActivity : AppCompatActivity(), Serializable {
         setContentView(R.layout.activity_cart)
 
         setupRecycler()
-        Log.d("Total", CartViewModel.getTotal().toString())
+        setListeners()
     }
+
+    private fun setListeners() {
+        place_order_button.setOnClickListener {
+            val billingActivity: Intent = Intent(this, BillingActivity::class.java).apply { }
+            CartViewModel.createOrder()
+            startActivity(billingActivity)
+        }
+    }
+
 
     private fun setupRecycler() {
         var shoppingList = CartViewModel.getShoppingList()

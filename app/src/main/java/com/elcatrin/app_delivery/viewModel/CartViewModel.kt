@@ -1,17 +1,10 @@
 package com.elcatrin.app_delivery.viewModel
 
 import android.util.Log
+import com.elcatrin.app_delivery.model.Order
 import com.elcatrin.app_delivery.model.Product
 
 class CartViewModel {
-
-    private fun removeProduct(product: Product) {
-        productList.remove(product)
-    }
-
-    private fun placeOrder() {
-        // save on Firebase
-    }
 
     companion object {
         private var productList: MutableList<Product> = mutableListOf<Product>()
@@ -28,13 +21,19 @@ class CartViewModel {
         fun getTotal(): Double {
             var total = 0.0
 
-            for(product in productList){
-                total += product.price.toDouble()
+            for (product in productList) {
+                total += product.price
             }
             return total
         }
 
-        fun placeOrder() {
+        fun createOrder() {
+            val products = mutableMapOf<String, Double>()
+            for(product in productList)
+                products[product.id] = product.price
+
+            val order = Order("userId", "storeId", "direction", this.getTotal(), "1h", products)
+            Log.d("Order Created", order.deliveryCost.toString())
         }
     }
 }

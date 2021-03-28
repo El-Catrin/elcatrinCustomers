@@ -6,5 +6,5 @@ data class Order(
     val direction: String,
     val deliveryCost: Double,
     val deliveryTime: String,
-    val products: Map<String, Double>
+    val products: MutableMap<String, Double>
 )

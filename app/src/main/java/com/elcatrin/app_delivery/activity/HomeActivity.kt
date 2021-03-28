@@ -15,7 +15,6 @@ import kotlinx.android.synthetic.main.activity_home.*
 
 
 class HomeActivity : AppCompatActivity() {
-    var cartViewModel = CartViewModel()
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,15 +60,8 @@ class HomeActivity : AppCompatActivity() {
         startActivity(currentLocationOnMap)
     }
 
-    /*
-    fun onOrderList(mi: MenuItem?) {
-        val orderList: Intent = Intent(this, ProductDetailActivity::class.java).apply { }
-        startActivity(orderList)
-    }
-*/
-
-
-
-
-
+//    fun onOrderListClick(mi: MenuItem?) {
+//        val orderList: Intent = Intent(this, BillingActivity::class.java).apply { }
+//        startActivity(orderList)
+//    }
 }
