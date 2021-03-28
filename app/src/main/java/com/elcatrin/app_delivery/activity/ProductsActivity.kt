@@ -15,7 +15,9 @@ import kotlinx.android.synthetic.main.activity_catalogo_productos.*
 class ProductsActivity : AppCompatActivity() {
 
     private lateinit var adapter: ProductAdapter
-    private val productViewModel by lazy { ViewModelProviders.of(this).get(ProductViewModel::class.java) }
+    private val productViewModel by lazy {
+        ViewModelProviders.of(this).get(ProductViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +37,6 @@ class ProductsActivity : AppCompatActivity() {
             adapter.notifyDataSetChanged()
         })
     }
-
 
     fun onHomePageClick(mi: MenuItem?) {
         val HomeActivity: Intent = Intent(this, HomeActivity::class.java).apply { }
@@ -58,6 +59,5 @@ class ProductsActivity : AppCompatActivity() {
         startActivity(orderList)
     }
 */
-
 
 }
