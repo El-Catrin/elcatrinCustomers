@@ -1,6 +1,7 @@
 package com.elcatrin.app_delivery.viewModel
 
 import android.util.Log
+import com.elcatrin.app_delivery.domain.data.network.OrderService
 import com.elcatrin.app_delivery.model.Order
 import com.elcatrin.app_delivery.model.Product
 import com.elcatrin.app_delivery.model.ProductInOrder
@@ -8,6 +9,7 @@ import com.elcatrin.app_delivery.model.ProductInOrder
 class CartViewModel {
 
     companion object {
+        private val orderService = OrderService()
         private var productList = mutableListOf<Product>()
         private var order = Order()
 
@@ -40,8 +42,8 @@ class CartViewModel {
             return this.order
         }
 
-        fun saveOrder() {
-
+        fun saveOrder(order: Order) {
+            orderService.saveOrder(order)
         }
     }
 }

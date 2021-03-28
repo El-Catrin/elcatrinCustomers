@@ -18,5 +18,7 @@ class BillingActivity : AppCompatActivity() {
         billing_delivery_price_txt.text = "100"
         billing_direction_txt.text = order.direction
         billing_time_txt.text = order.deliveryTime
+
+//        CartViewModel.saveOrder(order) # How to save a new order
     }
 }
