@@ -20,22 +20,17 @@ class CartViewModel {
             Log.d("ADD", "${product.name} added")
         }
 
-        fun getTotal(): Double {
-            var total = 0.0
-
-            for (product in productList) {
-                total += product.price
-            }
-            return total
-        }
-
         fun createOrder() {
             val products = mutableListOf<ProductInOrder>()
+            var subtotal = 0.0
             for (p in productList) {
                 products.add(ProductInOrder(p.id, p.price))
+                subtotal += p.price
             }
 
-            this.order = Order("userId", "storeId", "direction", this.getTotal(), "1h", products
+            this.order = Order(
+                "userId", "storeId", "direction",
+                subtotal, 100.0, "1h", products
             )
 
             Log.d("Order Created", order.deliveryCost.toString())
@@ -43,6 +38,10 @@ class CartViewModel {
 
         fun getOrder(): Order {
             return this.order
+        }
+
+        fun saveOrder() {
+
         }
     }
 }
