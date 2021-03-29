@@ -1,6 +1,8 @@
 package com.elcatrin.app_delivery.activity
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -32,7 +34,7 @@ class ProductDetailActivity : AppCompatActivity() {
             var p = it[0]
             product = p
             nombreProducto.text = product.name
-            precioProducto.text = product.price
+            precioProducto.text = product.price.toString()
             descripcionProducto.text = product.description
             Glide.with(this).load(product.image).into(imageProducto)
         })
@@ -43,4 +45,26 @@ class ProductDetailActivity : AppCompatActivity() {
             CartViewModel.addProduct(product)
         }
     }
+
+    fun onHomePageClick(mi: MenuItem?) {
+        val HomeActivity: Intent = Intent(this, HomeActivity::class.java).apply { }
+        startActivity(HomeActivity)
+    }
+
+    fun onShoppingCartClick(mi: MenuItem?) {
+        val cartActivity: Intent = Intent(this, CartActivity::class.java).apply { }
+        startActivity(cartActivity)
+    }
+
+    fun onCurrentLocation(mi: MenuItem?) {
+        val currentLocationOnMap: Intent = Intent(this, CurrentLocationOnMap::class.java).apply { }
+        startActivity(currentLocationOnMap)
+    }
+
+    /*
+    fun onOrderList(mi: MenuItem?) {
+        val orderList: Intent = Intent(this, ProductDetailActivity::class.java).apply { }
+        startActivity(orderList)
+    }
+*/
 }

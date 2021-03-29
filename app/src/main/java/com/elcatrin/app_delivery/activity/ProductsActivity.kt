@@ -1,6 +1,8 @@
 package com.elcatrin.app_delivery.activity
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -13,7 +15,9 @@ import kotlinx.android.synthetic.main.activity_catalogo_productos.*
 class ProductsActivity : AppCompatActivity() {
 
     private lateinit var adapter: ProductAdapter
-    private val productViewModel by lazy { ViewModelProviders.of(this).get(ProductViewModel::class.java) }
+    private val productViewModel by lazy {
+        ViewModelProviders.of(this).get(ProductViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +33,31 @@ class ProductsActivity : AppCompatActivity() {
 
     private fun getProductsByStoreId(storeId: String?) {
         productViewModel.getProductsByStoreId(storeId).observe(this, Observer {
-            adapter.setLisData(it)
+            adapter.setListData(it)
             adapter.notifyDataSetChanged()
         })
     }
+
+    fun onHomePageClick(mi: MenuItem?) {
+        val HomeActivity: Intent = Intent(this, HomeActivity::class.java).apply { }
+        startActivity(HomeActivity)
+    }
+
+    fun onShoppingCartClick(mi: MenuItem?) {
+        val cartActivity: Intent = Intent(this, CartActivity::class.java).apply { }
+        startActivity(cartActivity)
+    }
+
+    fun onCurrentLocation(mi: MenuItem?) {
+        val currentLocationOnMap: Intent = Intent(this, CurrentLocationOnMap::class.java).apply { }
+        startActivity(currentLocationOnMap)
+    }
+
+    /*
+    fun onOrderList(mi: MenuItem?) {
+        val orderList: Intent = Intent(this, ProductDetailActivity::class.java).apply { }
+        startActivity(orderList)
+    }
+*/
+
 }
