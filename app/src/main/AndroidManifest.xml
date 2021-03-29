@@ -21,11 +21,10 @@
         <activity android:name=".activity.BillingActivity"
             android:parentActivityName=".activity.methodPayment"> </activity>
 
-        <!--<activity android:name=".activity.methodPayment"
-        android:parentActivityName=".activity.cashpaymentActivity"
-        >
+        <activity android:name=".activity.methodPayment"
+        android:parentActivityName=".activity.cashpaymentActivity">
         android:parentActivityName=".activity.creditcardActivity"
-   -->
+        </activity>
 
         <activity android:name=".activity.creditcardActivity"></activity>
         <activity android:name=".activity.cashpaymentActivity"></activity>
@@ -54,10 +53,10 @@
         <activity android:name=".activity.ProductDetailActivity" /> <!-- android:parentActivityName=".ui.CatalogoEmpresas" /> -->
         <activity android:name=".activity.HomeActivity" />
         <activity
-            android:name=".activity.methodPayment"
-            android:parentActivityName=".activity.cashpaymentActivity"
+            android:name=".activity.AuthActivity"
+            android:parentActivityName=".activity.HomeActivity"
 
-            >android:parentActivityName=".activity.creditcardActivity"
+            >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -66,5 +65,5 @@
             </intent-filter>
         </activity>
     </application>
-    <!-- android:parentActivityName=".activity.HomeActivity"-->
+
 </manifest>
