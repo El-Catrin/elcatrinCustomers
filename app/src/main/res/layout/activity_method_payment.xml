@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dise_o_final_selecci_n_m_todo_de_pago">
+
+    <ImageButton
+        android:id="@+id/btnTarjeta"
+        android:layout_width="307dp"
+        android:layout_height="180dp"
+        android:background="@drawable/Tarjeta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="89dp" />
+
+    <ImageButton
+        android:id="@+id/btnEfectivo"
+        android:layout_width="308dp"
+        android:layout_height="177dp"
+        android:background="@drawable/efectivo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="316dp" />
+
+    <TextView
+        android:id="@+id/textEfectivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Efectivo"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="539dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
