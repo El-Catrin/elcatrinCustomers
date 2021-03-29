@@ -8,7 +8,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="655dp"
+      >
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -16,30 +17,36 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark" />
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
 
-        <Button
-            android:id="@+id/place_order_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Place Order" />
 
-        <TextView
-            android:id="@+id/total"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:text="Total" />
+            />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerCart"
             android:layout_width="395dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="10dp">
 
         </androidx.recyclerview.widget.RecyclerView>
 
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:ems="10"
+            android:text="Total"
+
+        />
+
+        <Button
+            android:id="@+id/place_order_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Place Order" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
 
