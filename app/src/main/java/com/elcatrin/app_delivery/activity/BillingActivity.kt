@@ -1,9 +1,11 @@
 package com.elcatrin.app_delivery.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.elcatrin.app_delivery.R
 import com.elcatrin.app_delivery.viewModel.CartViewModel
+
 import kotlinx.android.synthetic.main.activity_billing.*
 
 class BillingActivity : AppCompatActivity() {
@@ -20,5 +22,15 @@ class BillingActivity : AppCompatActivity() {
         billing_time_txt.text = order.deliveryTime
 
 //        CartViewModel.saveOrder(order) # How to save a new order
+
+        //Confirmar la orden y pagar
+        placeOrder()
+    }
+    fun placeOrder(){
+        place_order_button.setOnClickListener {
+            val methodPayment: Intent = Intent(this, methodPayment::class.java).apply {
+            }
+            startActivity(methodPayment)
+        }
     }
 }

@@ -6,13 +6,18 @@
     android:layout_height="match_parent"
     android:background="@drawable/dise_o_final_pago_en_efectivo">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"></LinearLayout>
+
     <Button
         android:id="@+id/btnPagarEfectivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pagar"
-        tools:layout_editor_absoluteX="308dp"
-        tools:layout_editor_absoluteY="511dp" />
+        tools:layout_editor_absoluteX="260dp"
+        tools:layout_editor_absoluteY="156dp" />
 
     <TextView
         android:id="@+id/textCambio"
@@ -28,21 +33,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="120dp"
         android:text="¿Necesitas Cambio?"
-        app:layout_constraintBottom_toTopOf="@+id/textCambio"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="88dp" />
 
     <EditText
         android:id="@+id/editTextNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInfo" />
+        tools:layout_editor_absoluteY="95dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
