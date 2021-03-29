@@ -10,10 +10,10 @@
         android:id="@+id/btnTarjeta"
         android:layout_width="307dp"
         android:layout_height="180dp"
-        android:background="@drawable/Tarjeta"
+        android:background="@drawable/tarjeta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="89dp" />
+        tools:layout_editor_absoluteY="112dp" />
 
     <ImageButton
         android:id="@+id/btnEfectivo"
@@ -21,16 +21,17 @@
         android:layout_height="177dp"
         android:background="@drawable/efectivo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="316dp" />
+        tools:layout_editor_absoluteY="349dp" />
 
     <TextView
         android:id="@+id/textEfectivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Efectivo"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="539dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEfectivo"
+        tools:layout_editor_absoluteX="180dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
