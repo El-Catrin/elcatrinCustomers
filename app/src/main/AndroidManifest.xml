@@ -18,15 +18,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activity.BillingActivity"></activity>
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-        -->
+        <activity android:name=".activity.BillingActivity"
+            android:parentActivityName=".activity.methodPayment"> </activity>
+
+        <activity android:name=".activity.methodPayment"
+        android:parentActivityName=".activity.cashpaymentActivity">
+        android:parentActivityName=".activity.creditcardActivity"
+        </activity>
+
+        <activity android:name=".activity.creditcardActivity"></activity>
+        <activity android:name=".activity.cashpaymentActivity"></activity>
+    <!--
+         The API key for Google Maps-based APIs is defined as a string resource.
+         (See the file "res/values/google_maps_api.xml").
+         Note that the API key is linked to the encryption key used to sign the APK.
+         You need a different API key for each encryption key, including the release key that is used to
+         sign the APK for publishing.
+         You can define the keys for the debug and release targets in src/debug/ and src/release/.
+    -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
@@ -45,7 +54,10 @@
         <activity android:name=".activity.HomeActivity" />
         <activity
             android:name=".activity.AuthActivity"
-            android:parentActivityName=".activity.HomeActivity">
+            android:parentActivityName=".activity.HomeActivity"
+
+            >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
