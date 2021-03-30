@@ -33,7 +33,7 @@ val uid = FirebaseAuth.getInstance().currentUser?.uid
 class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
     //Creamos una variable para que cada vez que movamos el marcador, sea una nueva posición
     var currentMarker: Marker? = null
-private val user = AuthActivity().showcurrentUser()
+
     private lateinit var mMap: GoogleMap
 
     //Nos da la ubicación instantánea de la última ubicación conocida
@@ -43,7 +43,7 @@ private val user = AuthActivity().showcurrentUser()
 
 
 
-
+    private val user = AuthActivity().showcurrentUser()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_current_location_on_map)
