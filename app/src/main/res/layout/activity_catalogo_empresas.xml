@@ -30,6 +30,7 @@
 
         android:layout_alignParentBottom="true"
         android:elevation="8dp"
+        android:background="@color/green"
         app:itemBackground="@color/green"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
