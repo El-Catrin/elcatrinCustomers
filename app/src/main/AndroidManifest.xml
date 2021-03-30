@@ -40,6 +40,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+
+
         <activity
             android:name=".activity.CurrentLocationOnMap"
             android:label="@string/title_activity_current_location_on_map" />

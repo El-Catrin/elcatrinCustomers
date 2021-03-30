@@ -60,7 +60,7 @@
 
                 <TextView
                     android:id="@+id/precioProducto"
-                    android:layout_width="match_parent"
+                    android:layout_width="123dp"
                     android:layout_height="match_parent"
                     android:text="Precio"
                     android:textSize="24sp"
@@ -125,6 +125,7 @@
 
         android:layout_alignParentBottom="true"
         android:elevation="8dp"
+        android:background="@color/green"
         app:itemBackground="@color/green"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
