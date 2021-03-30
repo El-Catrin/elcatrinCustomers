@@ -3,6 +3,7 @@ package com.elcatrin.app_delivery.activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.elcatrin.app_delivery.R
 import com.google.firebase.auth.FirebaseAuth
@@ -38,6 +39,7 @@ class AuthActivity : AppCompatActivity() {
                         if (it.isSuccessful) {
 
                             showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
+                            showcurrentUser()
                         }
                     }
                 } else {
@@ -73,6 +75,20 @@ class AuthActivity : AppCompatActivity() {
         }
         startActivity(homeActivity)
 
+
+
     }
+
+
+
+    fun showcurrentUser(): String? {
+
+       val user =  FirebaseAuth.getInstance().currentUser
+        val email = user.email
+        Log.i("Cuenta de usuario", email)
+        return email
+    }
+
+
 }
 

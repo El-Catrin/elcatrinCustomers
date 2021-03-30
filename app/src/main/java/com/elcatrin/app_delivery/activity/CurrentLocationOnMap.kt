@@ -6,6 +6,7 @@ import android.location.Geocoder
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.Toolbar
@@ -26,7 +27,7 @@ import java.util.*
 class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
     //Creamos una variable para que cada vez que movamos el marcador, sea una nueva posición
     var currentMarker: Marker? = null
-
+private val user = AuthActivity().showcurrentUser()
     private lateinit var mMap: GoogleMap
 
     //Nos da la ubicación instantánea de la última ubicación conocida
@@ -43,9 +44,12 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)*/
 
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+
+        Log.d("Usuario Actual", user.toString())
+            fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         fetchLocation()
     }
+
 
     //Función para decirle que nos debe dar permisos
     private fun fetchLocation() {
