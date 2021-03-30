@@ -21,6 +21,9 @@ class AuthActivity : AppCompatActivity() {
 
     //val auth = AuthService()
     override fun onCreate(savedInstanceState: Bundle?) {
+        Thread.sleep(2000)
+        setTheme(R.style.AppTheme)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
         singIn()
