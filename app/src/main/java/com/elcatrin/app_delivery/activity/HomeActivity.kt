@@ -39,6 +39,7 @@ class HomeActivity : AppCompatActivity() {
         // add button for cart access temporarily
     }
 
+
     private fun configureToolBar() {
         val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
