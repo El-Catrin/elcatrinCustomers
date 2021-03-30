@@ -17,4 +17,6 @@
 
     <string name="add_to_cart">Añadir al Carrito</string>
     <string name="title_activity_current_location_on_map">Map</string>
+
+    <string name="Guardar">Guardar Ubicación</string>
 </resources>
