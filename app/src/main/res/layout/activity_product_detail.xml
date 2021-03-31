@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.VistaProductos">
-
 
     <LinearLayout
         android:id="@+id/contenedorPrincipal"
@@ -47,8 +46,9 @@
                 android:id="@+id/nombreProducto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
                 android:layout_weight="1"
-                android:text="Nombre Del Producto"
+                android:text="Nombre Producto"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -62,6 +62,7 @@
                     android:id="@+id/precioProducto"
                     android:layout_width="123dp"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="40dp"
                     android:text="Precio"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -86,12 +87,14 @@
 
             <TextView
                 android:id="@+id/descripcionProducto"
-                android:layout_width="42dp"
+                android:layout_width="70dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:layout_marginStart="10dp"
                 android:text="Descripción"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
 
         </LinearLayout>
 
@@ -99,17 +102,21 @@
             android:id="@+id/btnComprar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="250dp"
             android:text="@string/add_to_cart" />
 
         <Button
             android:id="@+id/btnOrdenar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginBottom="250dp"
             android:text="Ordenar"
             android:visibility="invisible" />
 
 
     </LinearLayout>
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -138,4 +145,4 @@
 
         />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
