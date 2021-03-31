@@ -121,8 +121,26 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
         val latlong = LatLng(currentLocation?.latitude!!, currentLocation?.longitude!!)
         drawMarker(latlong)
 
-        FirebaseFirestore.getInstance().collection("User_GPS").document("01 - FG").update("Longitude",currentLocation?.longitude!!,
-            "Latitude",currentLocation?.latitude!!).addOnSuccessListener {  }
+
+        // Add a new document with a generated id.
+        val data = hashMapOf(
+            "Latitude" to currentLocation?.latitude!!,
+            "Longitude" to currentLocation?.longitude,
+            "User_ID" to user.toString()
+        )
+
+        FirebaseFirestore.getInstance().collection("User_GPS")
+            .add(data)
+            .addOnSuccessListener { documentReference ->
+                Log.d("Creado", "DocumentSnapshot written with ID: ${documentReference.id}")
+            }
+            .addOnFailureListener { e ->
+                Log.w("Error", "Error adding document", e)
+            }
+
+
+        /*FirebaseFirestore.getInstance().collection("User_GPS").document("01 - FG").update("Longitude",currentLocation?.longitude!!,
+            "Latitude",currentLocation?.latitude!!).addOnSuccessListener {  }*/
 
         //Arrastrar el marcador
         mMap.setOnMarkerDragListener(object : GoogleMap.OnMarkerDragListener {
