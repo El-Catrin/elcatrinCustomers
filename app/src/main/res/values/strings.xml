@@ -19,4 +19,6 @@
     <string name="title_activity_current_location_on_map">Map</string>
 
     <string name="Guardar">Guardar Ubicación</string>
+<string name="prefs_file">com.elcatrin.app.delivery.PREFERENCE_FILE_KEY</string>
+
 </resources>

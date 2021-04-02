@@ -1,9 +1,11 @@
 package com.elcatrin.app_delivery.activity
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.elcatrin.app_delivery.R
 import com.google.firebase.auth.FirebaseAuth
@@ -26,7 +28,32 @@ class AuthActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
+        //Funcion para iniciar sesion
         singIn()
+         session()
+
+
+
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+    }
+    private fun session()
+    {
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE )
+        val email :String? = prefs.getString("email", null)
+        val provider :String? = prefs.getString("provider", null)
+     try {
+         if (email != null && provider != null) {
+             lyAuth.visibility = View.INVISIBLE
+           showHome(email, ProviderType.valueOf(provider))
+         }
+     } catch (e: IOException)
+     {
+         e.printStackTrace()
+     }
 
     }
 

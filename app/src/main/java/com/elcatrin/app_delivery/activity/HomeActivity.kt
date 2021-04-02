@@ -1,5 +1,6 @@
 package com.elcatrin.app_delivery.activity
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.elcatrin.app_delivery.R
 import com.elcatrin.app_delivery.viewModel.CartViewModel
+import kotlinx.android.synthetic.main.activity_auth.*
 import kotlinx.android.synthetic.main.activity_home.*
 
 
@@ -24,6 +26,16 @@ class HomeActivity : AppCompatActivity() {
         configureToolBar()
         setListeners()
         Log.d("APP STATUS", "Started")
+
+        //Capturar los datos de la activity autenticacion
+        val bundle:Bundle? = intent.extras
+        val email:String? = bundle?.getString("email")
+        val provider:String? = bundle?.getString("provider")
+        //Guardar datos de sesion permanente
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE ).edit()
+        prefs.putString("email", email)
+        prefs.putString("provider", provider)
+        prefs.apply()
     }
 
     private fun setListeners() {
