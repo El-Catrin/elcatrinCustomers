@@ -7,6 +7,7 @@
     android:background="@drawable/dise_o_final_interfaz_usuario">
 
     <LinearLayout
+        android:id="@+id/lyAuth"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="16dp"
@@ -26,7 +27,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="100dp" />
+            android:layout_height="50dp" />
 
         <EditText
             android:id="@+id/emailEdittext"
@@ -53,16 +54,35 @@
             android:layout_height="16dp" />
 
         <LinearLayout
+            android:id="@+id/LycntButton"
             android:layout_width="match_parent"
             android:layout_height="174dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/singInbutton"
-                android:layout_width="wrap_content"
+                android:layout_width="172dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_gravity="center"
                 android:text="Ingresar" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="16dp" />
+
+            <Button
+                android:id="@+id/googleButton"
+                android:layout_width="237dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/white"
+                android:drawableStart="@drawable/googlemin"
+                android:gravity="left|center_vertical"
+                android:paddingStart="16dp"
+                android:text="Google"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark" />
         </LinearLayout>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
