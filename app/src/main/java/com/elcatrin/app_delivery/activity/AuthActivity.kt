@@ -11,8 +11,10 @@ import com.elcatrin.app_delivery.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import kotlinx.android.synthetic.main.activity_auth.*
 import java.io.IOException
 
@@ -36,10 +38,15 @@ class AuthActivity : AppCompatActivity() {
         singIn()
         session()
 
-
+        val analytics = FirebaseAnalytics.getInstance(this)
+        val bundle = Bundle()
+        bundle.putString("Message","Interagcion de fiber anakytics")
+        analytics.logEvent("InitScreen", bundle)
 
 
     }
+
+
 
     override fun onStart() {
         super.onStart()
