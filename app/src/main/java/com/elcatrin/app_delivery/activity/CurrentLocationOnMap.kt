@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import com.elcatrin.app_delivery.R
@@ -40,26 +41,17 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
     var fusedLocationProviderClient: FusedLocationProviderClient? = null
     //variable global para nuestra ubicación actual
     var currentLocation: Location? = null
-
-
-
     private val user = AuthActivity().showcurrentUser()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_current_location_on_map)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        /*val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)*/
 
-
-        Log.d("Usuario Actual", user.toString())
-            fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         fetchLocation()
 
-        guardarUbicacion.setOnClickListener {
 
-        }
     }
 
 
@@ -111,16 +103,9 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        // Add a marker in Sydney and move the camera
-        //Esto no lo necestio ya que es una ubicación codificada
-        /*val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))*/
-
         //Creo un objeto latlong con la ubicación actual
         val latlong = LatLng(currentLocation?.latitude!!, currentLocation?.longitude!!)
         drawMarker(latlong)
-
 
         // Add a new document with a generated id.
         val data = hashMapOf(
@@ -128,19 +113,18 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
             "Longitude" to currentLocation?.longitude,
             "User_ID" to user.toString()
         )
-
+         //almacenar la ubicacion actual del usuario en firebase-
         FirebaseFirestore.getInstance().collection("User_GPS")
             .add(data)
             .addOnSuccessListener { documentReference ->
                 Log.d("Creado", "DocumentSnapshot written with ID: ${documentReference.id}")
+                Toast.makeText(this, "Tu ubicacion ha sido almacenda", Toast.LENGTH_SHORT).show()
+
+
             }
             .addOnFailureListener { e ->
                 Log.w("Error", "Error adding document", e)
             }
-
-
-        /*FirebaseFirestore.getInstance().collection("User_GPS").document("01 - FG").update("Longitude",currentLocation?.longitude!!,
-            "Latitude",currentLocation?.latitude!!).addOnSuccessListener {  }*/
 
         //Arrastrar el marcador
         mMap.setOnMarkerDragListener(object : GoogleMap.OnMarkerDragListener {
@@ -164,14 +148,15 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
+
     //Función para dibujar marcador
     private fun drawMarker(latlong : LatLng) {
-        val markerOption = MarkerOptions().position(latlong).title("Estoy aquí")
+        val markerOption = MarkerOptions().position(latlong).title("Mi ubicación")
                 //La opción del marcador la dejo en true (draggable)
             .snippet(getAddress(latlong.latitude, latlong.latitude)).draggable(true)
 
         mMap.animateCamera(CameraUpdateFactory.newLatLng(latlong))
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlong, 15f))
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlong, 10f))
         currentMarker = mMap.addMarker(markerOption)
         currentMarker?.showInfoWindow()
     }
@@ -183,6 +168,7 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
         val addresses = geoCoder.getFromLocation(lat, lon, 1)
         return addresses[0].getAddressLine(0).toString()
     }
+
 
 
 }
