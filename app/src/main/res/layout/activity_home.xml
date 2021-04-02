@@ -1,42 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.homeActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        app:titleTextColor="@android:color/white"></androidx.appcompat.widget.Toolbar>
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/text_Restaurantes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:context=".ui.VistaProductos"
-        tools:layout_editor_absoluteY="86dp">
-
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/LinearMascotas"
-            android:layout_width="wrap_content"
-            android:layout_height="103dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="340dp"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <ImageButton
                 android:id="@+id/img_btn_empresas"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="280dp"
                 android:adjustViewBounds="true"
                 android:background="#FFFFFF"
                 android:contentDescription="@string/img_empresas"
@@ -46,119 +31,12 @@
 
         </LinearLayout>
 
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:fitsSystemWindows="true"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-
-                <Space
-                    android:layout_width="8dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/LinearEntretenimiento"
-            android:layout_width="wrap_content"
-            android:layout_height="103dp"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="340dp"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageButton
-                android:id="@+id/img_btn_entretenimiento"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
-                android:contentDescription="@string/img_empresas"
-                android:cropToPadding="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/entretenimiento" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/LinearFerreteria"
-            android:layout_width="wrap_content"
-            android:layout_height="103dp"
-            android:layout_marginStart="260dp"
-            android:layout_marginTop="340dp"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageButton
-                android:id="@+id/img_btn_ferreteria"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
-                android:contentDescription="@string/img_empresas"
-                android:cropToPadding="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/ferreteria" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/LinearFarmacia"
-            android:layout_width="wrap_content"
-            android:layout_height="103dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="455dp"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageButton
-                android:id="@+id/img_btn_farmacia"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
-                android:contentDescription="@string/img_empresas"
-                android:cropToPadding="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/farmacia" />
-
-        </LinearLayout>
-
         <LinearLayout
             android:id="@+id/LinearBelleza"
             android:layout_width="wrap_content"
             android:layout_height="103dp"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="455dp"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="280dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -177,17 +55,17 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/LinearTecnologia"
+            android:id="@+id/LinearEntretenimiento"
             android:layout_width="wrap_content"
             android:layout_height="103dp"
             android:layout_marginStart="260dp"
-            android:layout_marginTop="455dp"
+            android:layout_marginTop="280dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
-                android:id="@+id/img_btn_tecnologia"
+                android:id="@+id/img_btn_entretenimiento"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
@@ -195,17 +73,62 @@
                 android:contentDescription="@string/img_empresas"
                 android:cropToPadding="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/tecnologia" />
+                android:src="@drawable/entretenimiento" />
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/LinearFarmacia"
+            android:layout_width="wrap_content"
+            android:layout_height="103dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="400dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/img_btn_farmacia"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/img_empresas"
+                android:cropToPadding="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/farmacia" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearFerreteria"
+            android:layout_width="wrap_content"
+            android:layout_height="103dp"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="400dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/img_btn_ferreteria"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/img_empresas"
+                android:cropToPadding="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ferreteria" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/LinearPanaderias"
             android:layout_width="wrap_content"
             android:layout_height="103dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="570dp"
+            android:layout_marginStart="260dp"
+            android:layout_marginTop="400dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -227,8 +150,8 @@
             android:id="@+id/LinearRestaurantes"
             android:layout_width="wrap_content"
             android:layout_height="103dp"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="570dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="520dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -246,13 +169,12 @@
 
         </LinearLayout>
 
-
         <LinearLayout
             android:id="@+id/LinearSupermercados"
             android:layout_width="wrap_content"
             android:layout_height="103dp"
-            android:layout_marginStart="260dp"
-            android:layout_marginTop="570dp"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="520dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -270,22 +192,54 @@
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imageView2"
+        <LinearLayout
+            android:id="@+id/LinearTecnologia"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="117dp"
-            android:layout_marginTop="124dp"
-            android:layout_marginEnd="129dp"
-            android:src="@drawable/icono"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_height="103dp"
+            android:layout_marginStart="260dp"
+            android:layout_marginTop="520dp"
+            android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/img_btn_tecnologia"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="#FFFFFF"
+                android:contentDescription="@string/img_empresas"
+                android:cropToPadding="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/tecnologia" />
+
+        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            app:titleTextColor="@android:color/white"></androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/splashscreen_logo"
+            tools:layout_editor_absoluteX="113dp"
+            tools:layout_editor_absoluteY="78dp" />
+
+    </LinearLayout>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -318,4 +272,4 @@
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
