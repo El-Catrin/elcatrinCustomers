@@ -2,12 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chkacpectarCambio"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dise_o_final_pago_en_efectivo">
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/editTextCambio"
         android:layout_width="286dp"
         android:layout_height="41dp"
         android:layout_marginStart="68dp"
@@ -15,29 +16,31 @@
         android:layout_marginEnd="57dp"
         android:ems="10"
         android:inputType="number"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/chkaceptarCambio"
+        tools:visibility="visible" />
 
     <Button
-        android:id="@+id/btnPagarEfectivo"
+        android:id="@+id/btnContinuar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:background="#FE6D00"
-        android:text="Pagar"
+        android:text="CONTINUAR"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+        app:layout_constraintTop_toBottomOf="@+id/editTextCambio"
         tools:layout_editor_absoluteX="177dp" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/chkaceptarCambio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="123dp"
-        android:layout_marginTop="312dp"
+        android:layout_marginTop="350dp"
         android:layout_marginEnd="129dp"
         android:text="¿Necesitas Cambio?"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,8 +61,8 @@
         android:layout_alignParentRight="true"
 
         android:layout_alignParentBottom="true"
-        android:elevation="8dp"
         android:background="@color/green"
+        android:elevation="8dp"
         app:itemBackground="@color/green"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
