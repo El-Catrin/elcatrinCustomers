@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import com.elcatrin.app_delivery.R
@@ -47,19 +48,11 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_current_location_on_map)
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        /*val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)*/
 
-
-        Log.d("Usuario Actual", user.toString())
-            fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         fetchLocation()
+        savedLocation()
 
-        guardarUbicacion.setOnClickListener {
-
-        }
     }
 
 
@@ -121,7 +114,7 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
         val latlong = LatLng(currentLocation?.latitude!!, currentLocation?.longitude!!)
         drawMarker(latlong)
 
-
+      /*
         // Add a new document with a generated id.
         val data = hashMapOf(
             "Latitude" to currentLocation?.latitude!!,
@@ -136,11 +129,10 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
             }
             .addOnFailureListener { e ->
                 Log.w("Error", "Error adding document", e)
-            }
+            }*/
 
 
-        /*FirebaseFirestore.getInstance().collection("User_GPS").document("01 - FG").update("Longitude",currentLocation?.longitude!!,
-            "Latitude",currentLocation?.latitude!!).addOnSuccessListener {  }*/
+
 
         //Arrastrar el marcador
         mMap.setOnMarkerDragListener(object : GoogleMap.OnMarkerDragListener {
@@ -184,5 +176,33 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
         return addresses[0].getAddressLine(0).toString()
     }
 
+    private fun getdistanceKm() {
+
+
+
+
+    }
+    private fun savedLocation(){
+
+        guardarUbicacion.setOnClickListener {
+            // Add a new document with a generated id.
+            val data = hashMapOf(
+                "Latitude" to currentLocation?.latitude!!,
+                "Longitude" to currentLocation?.longitude,
+                "User_ID" to user.toString()
+            )
+
+            FirebaseFirestore.getInstance().collection("User_GPS")
+                .add(data)
+                .addOnSuccessListener { documentReference ->
+                    Log.d("Creado", "DocumentSnapshot written with ID: ${documentReference.id}")
+                }
+                .addOnFailureListener { e ->
+                    Log.w("Error", "Error adding document", e)
+                }
+            Toast.makeText(this, "Se Almaceno la ubicacion", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, data.toString(), Toast.LENGTH_SHORT).show()
+        }
+    }
 
 }
