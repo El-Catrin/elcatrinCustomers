@@ -45,9 +45,8 @@ class CartProductAdapter(private val context: Context) :
     inner class ProductsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun productBindView(product: Product) {
-            Glide.with(context).load(product.image).into(itemView.background_image)
+            Glide.with(context).load(product.image).into(itemView.imageProducto)
             itemView.product_name_txt.text = product.name
-            itemView.product_description_txt.text = product.description
             itemView.product_price_txt.text = product.price.toString()
         }
     }
