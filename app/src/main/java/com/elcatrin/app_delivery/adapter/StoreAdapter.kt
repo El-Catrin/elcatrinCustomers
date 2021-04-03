@@ -48,8 +48,6 @@ class StoreAdapter(private val context: Context) :
             itemView.text_nombre.text = store.Name_Company
             itemView.text_desc.text = store.Desc_Company
             Glide.with(context).load(store.Company_Banner).into(itemView.img_empresa)
-            itemView.text_horario.text = store.Working_Hours
-            itemView.text_cost_min.text = store.Min_Cost
         }
     }
 }
