@@ -178,6 +178,8 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
 
     private fun getdistanceKm() {
 
+        val latlong1 = LatLng(currentLocation?.latitude!!, currentLocation?.longitude!!)
+        val latlong2 = LatLng(14.097557, -87.208593)
 
 
 
