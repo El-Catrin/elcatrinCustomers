@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -44,11 +45,30 @@ class HomeActivity : AppCompatActivity() {
             startActivity(storesActivity)
         }
 
-//        img_btn_empresas.setOnClickListener {
-//
-//            // start cart activity
-//        }
-        // add button for cart access temporarily
+        img_btn_entretenimiento.setOnClickListener {
+           Toast.makeText(this, "El servicio no se encuentra disponible",  Toast.LENGTH_SHORT).show()
+        }
+        img_btn_belleza.setOnClickListener {
+            Toast.makeText(this, "El servicio no se encuentra disponible",  Toast.LENGTH_SHORT).show()
+        }
+        img_btn_farmacia.setOnClickListener {
+            Toast.makeText(this, "El servicio no se encuentra disponible",  Toast.LENGTH_SHORT).show()
+        }
+        img_btn_panaderias.setOnClickListener {
+            Toast.makeText(this, "El servicio no se encuentra disponible",  Toast.LENGTH_SHORT).show()
+        }
+        img_btn_restaurantes.setOnClickListener {
+            Toast.makeText(this, "El servicio no se encuentra disponible",  Toast.LENGTH_SHORT).show()
+        }
+        img_btn_supermercados.setOnClickListener {
+            Toast.makeText(this, "El servicio no se encuentra disponible",  Toast.LENGTH_SHORT).show()
+        }
+        img_btn_tecnologia.setOnClickListener {
+            Toast.makeText(this, "El servicio no se encuentra disponible",  Toast.LENGTH_SHORT).show()
+        }
+        img_btn_ferreteria.setOnClickListener {
+            Toast.makeText(this, "El servicio no se encuentra disponible",  Toast.LENGTH_SHORT).show()
+        }
     }
 
 
