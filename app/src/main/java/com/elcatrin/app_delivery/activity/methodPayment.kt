@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.elcatrin.app_delivery.R
 import kotlinx.android.synthetic.main.activity_billing.*
@@ -21,10 +22,10 @@ class methodPayment : AppCompatActivity() {
 
     fun creditCard(){
         btnTarjeta.setOnClickListener {
-            val credicardactivity: Intent = Intent(this, creditcardActivity::class.java).apply {
+          /*  val credicardactivity: Intent = Intent(this, creditcardActivity::class.java).apply {
             }
-            startActivity(credicardactivity)
-
+            startActivity(credicardactivity)*/
+            Toast.makeText(this, "El servicio no esta disponible", Toast.LENGTH_SHORT).show()
             Log.i("Activity", "Se dio clic en el boton de tarjeta de credito")
         }
     }
