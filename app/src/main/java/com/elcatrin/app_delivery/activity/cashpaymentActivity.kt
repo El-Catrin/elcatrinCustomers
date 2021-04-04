@@ -7,10 +7,13 @@ import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.CheckBox
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.elcatrin.app_delivery.R
 import com.elcatrin.app_delivery.viewModel.CartViewModel
 import kotlinx.android.synthetic.main.activity_cash_payment.*
+import java.io.IOException
+
 
 class cashpaymentActivity: AppCompatActivity(), View.OnClickListener {
     private val order = CartViewModel.getOrder()
@@ -18,11 +21,12 @@ class cashpaymentActivity: AppCompatActivity(), View.OnClickListener {
 
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cash_payment)
         chkaceptarCambio.setOnClickListener(this)
-        confirmarPedido()
+
     }
 
 
@@ -33,16 +37,29 @@ class cashpaymentActivity: AppCompatActivity(), View.OnClickListener {
             R.id.chkaceptarCambio -> if (isCheckBox){
                 editTextCambio.visibility = View.VISIBLE
                 Log.i("Estado","Se habilito el check")
+
+                    btnContinuar.setOnClickListener {
+                        retornarCambio()
+                    }
+
             }
             else{
                 editTextCambio.visibility = View.INVISIBLE
+                Log.i("Estado","No se habilito el check")
+                btnContinuar.setOnClickListener {
+                    confirmarPedido()
+
+                }
             }
         }
-
     }
+
     fun confirmarPedido(){
         btnContinuar.setOnClickListener {
+            Log.i("Orden", order.toString())
             save
+
+
         }
     }
     fun showMessage(Titulo: String, Mensaje:String){
@@ -56,38 +73,59 @@ class cashpaymentActivity: AppCompatActivity(), View.OnClickListener {
     }
 
 
-    fun retornarCambio(): Double {
+    fun retornarCambio() {
+
         var total = order.subtotal + order.deliveryCost
+        Log.i("Subtotal",order.subtotal.toString())
+        Log.i("Costo de envio",order.deliveryCost.toString())
+        Log.i("total",total.toString())
+        var cambio = 0.0
+try {
+    if (editTextCambio.text.isNotEmpty()) {
+        cambio = cambio + editTextCambio.text.toString().toDouble()
+        Log.i("Vuelto", cambio.toString())
+        if (cambio > total) {
 
-        var cambio = editTextCambio
-        if( 10.0 > total){
-            var suma=total
-
-        }
-        else{
+            // Se envia la orden al comercio
+            var resultado = cambio - total
+            confirmarPedido()
+            Log.i("Estado", "Se envio la orden y el cambio es el siguiente: " + resultado)
+        } else {
             showMessage("Error", "Monto Insuficiente")
         }
-        return total
-    }
+    } else {
+        showMessage("Error", "Ingrese un valor valido")
+        Log.e("Estado", "No se envio la orden")
 
-    fun onHomePageClick(mi: MenuItem?) {
-        val HomeActivity: Intent = Intent(this, HomeActivity::class.java).apply { }
-        startActivity(HomeActivity)
     }
+}
+catch(e: IOException){
 
-    fun onShoppingCartClick(mi: MenuItem?) {
-        val cartActivity: Intent = Intent(this, CartActivity::class.java).apply { }
-        startActivity(cartActivity)
-    }
+    e.stackTrace
+}
+      }
 
-    fun onCurrentLocation(mi: MenuItem?) {
-        val currentLocationOnMap: Intent = Intent(this, CurrentLocationOnMap::class.java).apply { }
-        startActivity(currentLocationOnMap)
-    }
+        fun onHomePageClick(mi: MenuItem?) {
+            val HomeActivity: Intent = Intent(this, HomeActivity::class.java).apply { }
+            startActivity(HomeActivity)
+        }
+
+        fun onShoppingCartClick(mi: MenuItem?) {
+            val cartActivity: Intent = Intent(this, CartActivity::class.java).apply { }
+            startActivity(cartActivity)
+        }
+
+        fun onCurrentLocation(mi: MenuItem?) {
+            val currentLocationOnMap: Intent =
+                Intent(this, CurrentLocationOnMap::class.java).apply { }
+            startActivity(currentLocationOnMap)
+        }
 
 //    fun onOrderListClick(mi: MenuItem?) {
 //        val orderList: Intent = Intent(this, BillingActivity::class.java).apply { }
 //        startActivity(orderList)
 //    }
+    }
 
-}
+
+
