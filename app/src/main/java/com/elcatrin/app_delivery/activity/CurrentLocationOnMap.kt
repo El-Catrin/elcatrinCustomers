@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import com.elcatrin.app_delivery.R
+import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
@@ -188,22 +189,28 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
 
         guardarUbicacion.setOnClickListener {
             // Add a new document with a generated id.
-            val data = hashMapOf(
-                "Latitude" to currentLocation?.latitude!!,
-                "Longitude" to currentLocation?.longitude,
-                "User_ID" to user.toString()
-            )
+            try {
+                val data = hashMapOf(
+                    "Latitude" to currentLocation?.latitude!!,
+                    "Longitude" to currentLocation?.longitude,
+                    "User_ID" to user.toString()
+                )
 
-            FirebaseFirestore.getInstance().collection("User_GPS")
-                .add(data)
-                .addOnSuccessListener { documentReference ->
-                    Log.d("Creado", "DocumentSnapshot written with ID: ${documentReference.id}")
-                }
-                .addOnFailureListener { e ->
-                    Log.w("Error", "Error adding document", e)
-                }
-            Toast.makeText(this, "Se Almaceno la ubicacion", Toast.LENGTH_LONG).show()
-            Toast.makeText(this, data.toString(), Toast.LENGTH_SHORT).show()
+                FirebaseFirestore.getInstance().collection("User_GPS")
+                    .add(data)
+                    .addOnSuccessListener { documentReference ->
+                        Log.d("Creado", "DocumentSnapshot written with ID: ${documentReference.id}")
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w("Error", "Error adding document", e)
+                    }
+                Toast.makeText(this, "Se Almaceno la ubicacion", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, data.toString(), Toast.LENGTH_SHORT).show()
+            }catch (e: ApiException){
+
+                Toast.makeText(this, "Favor provee permisos de uso del GPS", Toast.LENGTH_LONG).show()
+                e.printStackTrace()
+            }
         }
     }
 
