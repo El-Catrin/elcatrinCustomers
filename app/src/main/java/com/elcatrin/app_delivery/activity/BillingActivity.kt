@@ -22,7 +22,7 @@ class BillingActivity : AppCompatActivity() {
         billing_direction_txt.text = order.direction
         billing_time_txt.text = order.deliveryTime
 
-       CartViewModel.saveOrder(order) //# How to save a new order
+       //CartViewModel.saveOrder(order) //# How to save a new order
 
         //Confirmar la orden y pagar
         placeOrder()
