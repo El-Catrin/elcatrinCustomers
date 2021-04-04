@@ -67,7 +67,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="260dp"
             android:text="L."
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"/>
 
     </LinearLayout>
@@ -84,7 +84,7 @@
             android:layout_marginStart="45dp"
             android:layout_marginTop="260dp"
             android:text="Precio"
-            android:textSize="24sp"
+            android:textSize="20sp"
             />
 
     </LinearLayout>
