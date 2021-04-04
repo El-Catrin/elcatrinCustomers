@@ -26,6 +26,10 @@ class cashpaymentActivity: AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cash_payment)
         chkaceptarCambio.setOnClickListener(this)
+        btnContinuar.setOnClickListener {
+            confirmarPedido()
+
+        }
 
     }
 
@@ -55,12 +59,10 @@ class cashpaymentActivity: AppCompatActivity(), View.OnClickListener {
     }
 
     fun confirmarPedido(){
-        btnContinuar.setOnClickListener {
-            Log.i("Orden", order.toString())
-            save
-
-
-        }
+        save
+        Toast.makeText(this, "Se ordeno su pedido", Toast.LENGTH_LONG ).show()
+        val activityhome: Intent = Intent(this, HomeActivity::class.java).apply { }
+        startActivity(activityhome)
     }
     fun showMessage(Titulo: String, Mensaje:String){
 
