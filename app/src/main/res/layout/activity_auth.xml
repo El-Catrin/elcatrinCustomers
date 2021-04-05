@@ -64,7 +64,11 @@
                 android:layout_width="172dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Ingresar" />
+                android:text="Ingresar"
+                android:background="#FE6D00"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
 
             <Space
                 android:layout_width="wrap_content"
