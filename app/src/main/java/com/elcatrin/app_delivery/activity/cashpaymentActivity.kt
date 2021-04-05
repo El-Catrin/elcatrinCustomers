@@ -59,7 +59,9 @@ class cashpaymentActivity: AppCompatActivity(), View.OnClickListener {
     }
 
     fun confirmarPedido(){
+        var shoppingList = CartViewModel.getShoppingList()
         save
+        shoppingList.clear()
         Toast.makeText(this, "Se ordeno su pedido", Toast.LENGTH_LONG ).show()
         val activityhome: Intent = Intent(this, HomeActivity::class.java).apply { }
         startActivity(activityhome)

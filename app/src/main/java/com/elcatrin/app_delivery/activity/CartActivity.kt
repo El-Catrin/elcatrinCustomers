@@ -28,10 +28,14 @@ class CartActivity : AppCompatActivity(), Serializable {
 
     private fun setListeners() {
         place_order_button.setOnClickListener {
+            var shoppingList = CartViewModel.getShoppingList()
+    if (!shoppingList.isEmpty()){
             val billingActivity: Intent = Intent(this, BillingActivity::class.java).apply { }
             CartViewModel.createOrder()
             startActivity(billingActivity)
         }
+        }
+
     }
 
 
