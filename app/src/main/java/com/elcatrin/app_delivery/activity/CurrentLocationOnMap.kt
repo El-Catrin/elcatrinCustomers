@@ -177,12 +177,22 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
         return addresses[0].getAddressLine(0).toString()
     }
 
-    private fun getdistanceKm() {
+    private fun getDistance(): Double  {
 
         val latlong1 = LatLng(currentLocation?.latitude!!, currentLocation?.longitude!!)
         val latlong2 = LatLng(14.097557, -87.208593)
 
+        val distance = 100.00
+        return distance
+    }
 
+    private fun currentLocation() : String {
+
+        val Latitud  = currentLocation?.latitude!!
+       val logitude  =currentLocation?.longitude!!
+
+        val locatation = "Tu ubicacion es la siguite:" + Latitud + "Logitud" +  logitude
+     return locatation
 
     }
     private fun savedLocation(){

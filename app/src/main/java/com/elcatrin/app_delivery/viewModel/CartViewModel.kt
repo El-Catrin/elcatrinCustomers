@@ -1,10 +1,12 @@
 package com.elcatrin.app_delivery.viewModel
 
 import android.util.Log
+import com.elcatrin.app_delivery.activity.CurrentLocationOnMap
 import com.elcatrin.app_delivery.domain.data.network.OrderService
 import com.elcatrin.app_delivery.model.Order
 import com.elcatrin.app_delivery.model.Product
 import com.elcatrin.app_delivery.model.ProductInOrder
+import com.google.firebase.auth.FirebaseAuth
 
 class CartViewModel {
 
@@ -12,6 +14,9 @@ class CartViewModel {
         private val orderService = OrderService()
         private var productList = mutableListOf<Product>()
         private var order = Order()
+        private  val uid = FirebaseAuth.getInstance().currentUser?.uid
+        private val loc = CurrentLocationOnMap().currentLocation
+
 
         fun getShoppingList(): MutableList<Product> {
             return productList
@@ -31,7 +36,7 @@ class CartViewModel {
             }
 
             this.order = Order(
-                "userId", "storeId", "direction",
+                uid.toString(), "storeId", loc.toString(),
                 subtotal, 100.0, "1h", products
             )
 
