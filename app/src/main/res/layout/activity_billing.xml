@@ -7,132 +7,232 @@
     android:background="@drawable/dise_o_final_de_confirmaci_n_de_pedido"
     tools:context=".activity.BillingActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="63dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="240dp"
-        android:layout_marginStart="80dp"
-        android:text="Orden #"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="250dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="65dp"
+            android:text="Orden #"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/billing_user_id"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="240dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="65dp"
         android:text="Usuario:"
+        android:textStyle="bold"
+        android:textSize="15sp"
         tools:layout_editor_absoluteX="80dp"
         tools:layout_editor_absoluteY="146dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
     <TextView
         android:id="@+id/billing_user_id_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="240dp"
-        android:layout_marginStart="180dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginStart="65dp"
         android:text="TextView"
+        android:textSize="15sp"
         tools:layout_editor_absoluteX="187dp"
         tools:layout_editor_absoluteY="146dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/billing_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:layout_marginEnd="240dp"
-        android:layout_marginStart="82dp"
+        android:layout_marginTop="155dp"
+        android:layout_marginStart="65dp"
         android:text="Cobro:"
+        android:textSize="15sp"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="80dp"
         tools:layout_editor_absoluteY="192dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/billing_price_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:layout_marginEnd="240dp"
-        android:layout_marginStart="180dp"
+        android:layout_marginTop="155dp"
+        android:layout_marginStart="140dp"
         android:text="TextView"
+        android:textSize="15sp"
         tools:layout_editor_absoluteX="186dp"
         tools:layout_editor_absoluteY="192dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/billing_delivery_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
-        android:layout_marginStart="82dp"
-        android:text="V. Entrega:"
+        android:layout_marginTop="195dp"
+        android:layout_marginStart="65dp"
+        android:text="C. Envio:"
+        android:textStyle="bold"
+        android:textSize="15sp"
         tools:layout_editor_absoluteX="80dp"
         tools:layout_editor_absoluteY="236dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/billing_delivery_price_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
-        android:layout_marginStart="180dp"
+        android:layout_marginTop="195dp"
+        android:layout_marginStart="140dp"
         android:text="TextView"
+        android:textSize="15sp"
         tools:layout_editor_absoluteX="186dp"
         tools:layout_editor_absoluteY="236dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/billing_direction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="270dp"
-        android:layout_marginStart="82dp"
+        android:layout_marginTop="240dp"
+        android:layout_marginStart="65dp"
         android:text="Dirección:"
+        android:textSize="15sp"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="80dp"
         tools:layout_editor_absoluteY="283dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/billing_direction_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="270dp"
-        android:layout_marginStart="180dp"
+        android:layout_marginTop="275dp"
+        android:layout_marginStart="65dp"
         android:text="TextView"
+        android:textSize="15sp"
         tools:layout_editor_absoluteX="186dp"
         tools:layout_editor_absoluteY="283dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/billing_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="320dp"
-        android:layout_marginStart="82dp"
-        android:text="Tiempo de Entrega"
+        android:layout_marginStart="65dp"
+        android:text="T. Entrega"
+        android:textStyle="bold"
+        android:textSize="15sp"
         tools:layout_editor_absoluteX="142dp"
         tools:layout_editor_absoluteY="325dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/billing_time_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="320dp"
-        android:layout_marginStart="210dp"
+        android:layout_marginStart="140dp"
         android:text="1 hora"
+        android:textSize="15sp"
         tools:layout_editor_absoluteX="174dp"
         tools:layout_editor_absoluteY="356dp" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
     <Button
         android:id="@+id/place_order_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:layout_marginTop="450dp"
-        android:layout_marginStart="120dp"
+        android:background="#FE6D00"
+        android:textColor="#FFFFFF"
         android:text="Confirmar Orden"
+        android:textSize="15sp"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="129dp"
         tools:layout_editor_absoluteY="482dp" />
+
+    </LinearLayout>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
