@@ -11,8 +11,6 @@ class creditcardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form_credit_card)
-
-
     }
 
     fun onHomePageClick(mi: MenuItem?) {
@@ -30,9 +28,8 @@ class creditcardActivity : AppCompatActivity() {
         startActivity(currentLocationOnMap)
     }
 
-//    fun onOrderListClick(mi: MenuItem?) {
-//        val orderList: Intent = Intent(this, BillingActivity::class.java).apply { }
-//        startActivity(orderList)
-//    }
-
+    fun onOrderListClick(mi: MenuItem?) {
+        val ordersActivity: Intent = Intent(this, OrdersActivity::class.java).apply { }
+        startActivity(ordersActivity)
+    }
 }

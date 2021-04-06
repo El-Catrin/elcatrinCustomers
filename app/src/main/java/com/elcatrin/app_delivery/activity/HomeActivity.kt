@@ -93,8 +93,8 @@ class HomeActivity : AppCompatActivity() {
         startActivity(currentLocationOnMap)
     }
 
-//    fun onOrderListClick(mi: MenuItem?) {
-//        val orderList: Intent = Intent(this, BillingActivity::class.java).apply { }
-//        startActivity(orderList)
-//    }
+    fun onOrderListClick(mi: MenuItem?) {
+        val ordersActivity: Intent = Intent(this, OrdersActivity::class.java).apply { }
+        startActivity(ordersActivity)
+    }
 }

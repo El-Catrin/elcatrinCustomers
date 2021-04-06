@@ -7,7 +7,6 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.elcatrin.app_delivery.R
-import kotlinx.android.synthetic.main.activity_billing.*
 import kotlinx.android.synthetic.main.activity_method_payment.*
 
 class methodPayment : AppCompatActivity() {
@@ -20,17 +19,17 @@ class methodPayment : AppCompatActivity() {
         cashPayment()
     }
 
-    fun creditCard(){
+    fun creditCard() {
         btnTarjeta.setOnClickListener {
-          /*  val credicardactivity: Intent = Intent(this, creditcardActivity::class.java).apply {
-            }
-            startActivity(credicardactivity)*/
+            /*  val credicardactivity: Intent = Intent(this, creditcardActivity::class.java).apply {
+              }
+              startActivity(credicardactivity)*/
             Toast.makeText(this, "El servicio no esta disponible", Toast.LENGTH_SHORT).show()
             Log.i("Activity", "Se dio clic en el boton de tarjeta de credito")
         }
     }
 
-    fun cashPayment(){
+    fun cashPayment() {
         btnEfectivo.setOnClickListener {
             val cashpaymentactivity: Intent = Intent(this, cashpaymentActivity::class.java).apply {
             }
@@ -55,8 +54,8 @@ class methodPayment : AppCompatActivity() {
         startActivity(currentLocationOnMap)
     }
 
-//    fun onOrderListClick(mi: MenuItem?) {
-//        val orderList: Intent = Intent(this, BillingActivity::class.java).apply { }
-//        startActivity(orderList)
-//    }
+    fun onOrderListClick(mi: MenuItem?) {
+        val ordersActivity: Intent = Intent(this, OrdersActivity::class.java).apply { }
+        startActivity(ordersActivity)
+    }
 }

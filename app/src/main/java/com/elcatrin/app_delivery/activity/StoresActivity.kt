@@ -51,10 +51,8 @@ class StoresActivity : AppCompatActivity() {
         startActivity(currentLocationOnMap)
     }
 
-    /*
-    fun onOrderList(mi: MenuItem?) {
-        val orderList: Intent = Intent(this, ProductDetailActivity::class.java).apply { }
-        startActivity(orderList)
+    fun onOrderListClick(mi: MenuItem?) {
+        val ordersActivity: Intent = Intent(this, OrdersActivity::class.java).apply { }
+        startActivity(ordersActivity)
     }
-*/
 }

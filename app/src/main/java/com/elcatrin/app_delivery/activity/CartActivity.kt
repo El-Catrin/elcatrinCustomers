@@ -2,17 +2,14 @@ package com.elcatrin.app_delivery.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.elcatrin.app_delivery.R
 import com.elcatrin.app_delivery.adapter.CartProductAdapter
-import com.elcatrin.app_delivery.model.Order
 import com.elcatrin.app_delivery.viewModel.CartViewModel
 import kotlinx.android.synthetic.main.activity_cart.*
-import kotlinx.android.synthetic.main.activity_home.*
 import java.io.Serializable
 
 class CartActivity : AppCompatActivity(), Serializable {
@@ -29,16 +26,14 @@ class CartActivity : AppCompatActivity(), Serializable {
     private fun setListeners() {
         place_order_button.setOnClickListener {
             var shoppingList = CartViewModel.getShoppingList()
-    if (!shoppingList.isEmpty()){
-            val billingActivity: Intent = Intent(this, BillingActivity::class.java).apply { }
-            CartViewModel.createOrder()
-            startActivity(billingActivity)
+            if (shoppingList.isNotEmpty()) {
+                val billingActivity: Intent = Intent(this, BillingActivity::class.java).apply { }
+                CartViewModel.createOrder()
+                startActivity(billingActivity)
+            }
         }
-        }
-
     }
-
-
+    
     private fun setupRecycler() {
         var shoppingList = CartViewModel.getShoppingList()
 
@@ -65,11 +60,9 @@ class CartActivity : AppCompatActivity(), Serializable {
         startActivity(currentLocationOnMap)
     }
 
-    /*
-    fun onOrderList(mi: MenuItem?) {
-        val orderList: Intent = Intent(this, ProductDetailActivity::class.java).apply { }
-        startActivity(orderList)
+    fun onOrderListClick(mi: MenuItem?) {
+        val ordersActivity: Intent = Intent(this, OrdersActivity::class.java).apply { }
+        startActivity(ordersActivity)
     }
-*/
 
 }

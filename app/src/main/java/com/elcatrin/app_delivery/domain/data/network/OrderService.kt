@@ -4,40 +4,27 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.elcatrin.app_delivery.model.Order
-import com.elcatrin.app_delivery.model.ProductInOrder
 import com.google.firebase.firestore.FirebaseFirestore
 
 class OrderService {
     fun getOrdersByUserId(id: String): LiveData<MutableList<Order>> {
         val orders = MutableLiveData<MutableList<Order>>()
-        val products = mutableListOf<ProductInOrder>()
+
         FirebaseFirestore.getInstance().collection("Purchase_Order")
-            .whereEqualTo("User_Id", id)
+            .whereEqualTo("userId", id)
+            .limit(10)
             .get()
             .addOnSuccessListener { result ->
                 val list = mutableListOf<Order>()
                 for (document in result) {
-                    val userId = document.getString("User_Id")
-                    val storeId = document.getString("Cod_Company")
-                    val direction = document.getString("Direction")
-                    val subtotal = document.getDouble("Subtotal")
-                    val deliveryCost = document.getDouble("Delivery_Cost")
-                    val deliveryTime = document.getString("Delivery_Time")
-//                    val products = document.get("Products")
-                    val order = Order(
-                        userId!!,
-                        storeId!!,
-                        direction!!,
-                        subtotal!!,
-                        deliveryCost!!,
-                        deliveryTime!!,
-                        products
-                    )
+                    val order = document.toObject(Order::class.java)
                     list.add(order)
                 }
                 orders.value = list
             }
-
+            .addOnFailureListener {
+                Log.d("EXCEPTION:", it.toString())
+            }
         return orders
     }
 
