@@ -26,6 +26,7 @@
     <item
         android:id="@+id/navigation_orderList"
         android:icon="@drawable/ic_baseline_receipt_long_24"
+        android:onClick="onOrderListClick"
         android:title="Orden"
         app:showAsAction="ifRoom" />
 </menu>
