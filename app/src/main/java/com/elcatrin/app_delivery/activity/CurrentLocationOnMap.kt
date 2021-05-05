@@ -215,7 +215,9 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
                         Log.w("Error", "Error adding document", e)
                     }
                 Toast.makeText(this, "Se Almaceno la ubicacion", Toast.LENGTH_LONG).show()
-                Toast.makeText(this, data.toString(), Toast.LENGTH_SHORT).show()
+                val activityhom: Intent = Intent(this, HomeActivity::class.java).apply { }
+                startActivity(activityhom)
+                //Toast.makeText(this, data.toString(), Toast.LENGTH_SHORT).show()
             }catch (e: ApiException){
 
                 Toast.makeText(this, "Favor provee permisos de uso del GPS", Toast.LENGTH_LONG).show()

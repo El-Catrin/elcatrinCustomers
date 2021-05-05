@@ -12,17 +12,17 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/billing_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginStart="70dp"
-        android:text="Cobro:"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="192dp" />
+        <TextView
+            android:id="@+id/billing_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="100dp"
+            android:text="Subtotal:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="80dp"
+            tools:layout_editor_absoluteY="192dp" />
 
     </LinearLayout>
 
@@ -164,17 +164,17 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/billing_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="335dp"
-        android:layout_marginStart="65dp"
-        android:text="T. Entrega"
-        android:textStyle="bold"
-        android:textSize="15sp"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="325dp" />
+        <TextView
+            android:id="@+id/billing_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="335dp"
+            android:text="Total"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="325dp" />
 
     </LinearLayout>
 

@@ -3,6 +3,7 @@ package com.elcatrin.app_delivery.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -43,6 +44,7 @@ class ProductDetailActivity : AppCompatActivity() {
     private fun setListeners() {
         btnComprar.setOnClickListener {
             CartViewModel.addProduct(product)
+            Toast.makeText(this, "Se agrego el producto al carrito de compras", Toast.LENGTH_LONG).show()
         }
     }
 

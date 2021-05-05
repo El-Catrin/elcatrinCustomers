@@ -3,6 +3,7 @@ package com.elcatrin.app_delivery.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,8 +31,10 @@ class CartActivity : AppCompatActivity(), Serializable {
                 val billingActivity: Intent = Intent(this, BillingActivity::class.java).apply { }
                 CartViewModel.createOrder()
                 startActivity(billingActivity)
+            }else{
+                Toast.makeText(this, "Carrito de compras vacío", Toast.LENGTH_LONG).show()
             }
-        }
+            }
     }
     
     private fun setupRecycler() {
