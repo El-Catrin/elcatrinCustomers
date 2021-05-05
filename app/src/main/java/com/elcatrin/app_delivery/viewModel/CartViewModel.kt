@@ -36,8 +36,8 @@ class CartViewModel {
             }
 
             this.order = Order(
-                uid.toString(), "storeId", loc.toString(),
-                subtotal, 100.0, "1h", products
+                uid.toString(), "storeId", "Mi Ubicación",
+                subtotal, 50.0, "30m", products
             )
 
             Log.d("Order Created", order.deliveryCost.toString())

@@ -35,7 +35,8 @@ class OrderAdapter(private val context: Context) :
 
     inner class OrderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindView(order: Order) {
-            itemView.subtotal_txt.text = order.subtotal.toString()
+            val suma = order.subtotal + order.deliveryCost
+            itemView.subtotal_txt.text = suma.toString()
         }
     }
 }
