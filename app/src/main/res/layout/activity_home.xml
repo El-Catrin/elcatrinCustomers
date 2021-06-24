@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.homeActivity">
+    tools:context=".activity.HomeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="410dp"
+        android:layout_height="380dp"
+        android:layout_marginTop="220dp">
 
         <LinearLayout
             android:id="@+id/LinearMascotas"
@@ -21,7 +22,7 @@
                 android:layout_width="80dp"
                 android:layout_height="100dp"
                 android:layout_marginStart="25dp"
-                android:layout_marginTop="280dp"
+                android:layout_marginTop="25dp"
                 android:adjustViewBounds="true"
                 android:background="#FFFFFF"
                 android:contentDescription="@string/img_empresas"
@@ -36,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="103dp"
             android:layout_marginStart="145dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="25dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -59,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="103dp"
             android:layout_marginStart="260dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="25dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -82,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="103dp"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="140dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -105,7 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="103dp"
             android:layout_marginStart="145dp"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="140dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -128,7 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="103dp"
             android:layout_marginStart="260dp"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="140dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -151,7 +152,7 @@
             android:layout_width="wrap_content"
             android:layout_height="103dp"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="520dp"
+            android:layout_marginTop="260dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -174,7 +175,7 @@
             android:layout_width="wrap_content"
             android:layout_height="103dp"
             android:layout_marginStart="145dp"
-            android:layout_marginTop="520dp"
+            android:layout_marginTop="260dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -197,7 +198,7 @@
             android:layout_width="wrap_content"
             android:layout_height="103dp"
             android:layout_marginStart="260dp"
-            android:layout_marginTop="520dp"
+            android:layout_marginTop="260dp"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
