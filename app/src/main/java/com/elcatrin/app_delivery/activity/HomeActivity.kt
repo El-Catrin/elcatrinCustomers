@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.activity_auth.*
 import kotlinx.android.synthetic.main.activity_home.*
 
 
+
 class HomeActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -46,7 +47,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         img_btn_entretenimiento.setOnClickListener {
-           Toast.makeText(this, "El servicio no se encuentra disponible",  Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "El servicio no se encuentra disponible",  Toast.LENGTH_SHORT).show()
         }
         img_btn_belleza.setOnClickListener {
             Toast.makeText(this, "El servicio no se encuentra disponible",  Toast.LENGTH_SHORT).show()
@@ -70,6 +71,7 @@ class HomeActivity : AppCompatActivity() {
             Toast.makeText(this, "El servicio no se encuentra disponible",  Toast.LENGTH_SHORT).show()
         }
     }
+
 
 
     private fun configureToolBar() {
