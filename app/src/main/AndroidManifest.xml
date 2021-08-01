@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.elcatrin.app_delivery">
+    package="com.elcatrin.customers">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -18,22 +18,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.OrdersActivity"></activity>
+        <activity android:name="com.elcatrin.customers.activity.OrdersActivity"></activity>
         <activity
-            android:name=".activity.BillingActivity"
-            android:parentActivityName=".activity.methodPayment"
+            android:name="com.elcatrin.customers.activity.BillingActivity"
+            android:parentActivityName="com.elcatrin.customers.activity.methodPayment"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".activity.methodPayment"
-            android:parentActivityName=".activity.cashpaymentActivity"
+            android:name="com.elcatrin.customers.activity.methodPayment"
+            android:parentActivityName="com.elcatrin.customers.activity.cashpaymentActivity"
             android:screenOrientation="portrait">
             android:parentActivityName=".activity.creditcardActivity"
         </activity>
-        <activity android:name=".activity.creditcardActivity"
+        <activity android:name="com.elcatrin.customers.activity.creditcardActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activity.cashpaymentActivity"
-            android:parentActivityName=".activity.HomeActivity"
+            android:name="com.elcatrin.customers.activity.cashpaymentActivity"
+            android:parentActivityName="com.elcatrin.customers.activity.HomeActivity"
             android:screenOrientation="portrait"/>
         <!--
          The API key for Google Maps-based APIs is defined as a string resource.
@@ -48,26 +48,26 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".activity.CurrentLocationOnMap"
+            android:name="com.elcatrin.customers.activity.CurrentLocationOnMap"
             android:label="@string/title_activity_current_location_on_map" />
-        <activity android:name=".activity.CartActivity"
+        <activity android:name="com.elcatrin.customers.activity.CartActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activity.StoresActivity"
-            android:parentActivityName=".activity.ProductsActivity"
+            android:name="com.elcatrin.customers.activity.StoresActivity"
+            android:parentActivityName="com.elcatrin.customers.activity.ProductsActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activity.ProductsActivity"
-            android:parentActivityName=".activity.ProductDetailActivity"
+            android:name="com.elcatrin.customers.activity.ProductsActivity"
+            android:parentActivityName="com.elcatrin.customers.activity.ProductDetailActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".activity.ProductDetailActivity"
+        <activity android:name="com.elcatrin.customers.activity.ProductDetailActivity"
             /> <!-- android:parentActivityName=".ui.CatalogoEmpresas" /> -->
         <activity
-            android:name=".activity.HomeActivity"
+            android:name="com.elcatrin.customers.activity.HomeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.AuthActivity"
-            android:parentActivityName=".activity.HomeActivity"
+            android:name="com.elcatrin.customers.activity.AuthActivity"
+            android:parentActivityName="com.elcatrin.customers.activity.HomeActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
