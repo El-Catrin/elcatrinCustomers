@@ -31,13 +31,24 @@ class CartViewModel {
             val products = mutableListOf<ProductInOrder>()
             var subtotal = 0.0
             for (p in productList) {
-                products.add(ProductInOrder(p.id, p.price))
+                products.add(ProductInOrder(p.id,p.price))
                 subtotal += p.price
             }
 
             this.order = Order(
-                uid.toString(), "storeId", "Mi Ubicación",
-                subtotal, 50.0, "30m", products
+                uid.toString(),
+                "01",
+                "14.063796, -87.173540",
+                subtotal,
+                50.0,
+                "30m",
+                "01",
+                "En Espera",
+                "",
+                "01/07/2021",
+                "16:00",
+                "",
+                products
             )
 
             Log.d("Order Created", order.deliveryCost.toString())
