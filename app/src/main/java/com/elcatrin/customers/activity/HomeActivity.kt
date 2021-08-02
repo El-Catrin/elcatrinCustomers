@@ -23,7 +23,6 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        configureToolBar()
         setListeners()
         Log.d("APP STATUS", "Started")
 
@@ -71,12 +70,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
 
-
-    private fun configureToolBar() {
-        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
-        setSupportActionBar(toolbar)
-
-    }
 
     fun onHomePageClick(mi: MenuItem?) {
         val HomeActivity: Intent = Intent(this, HomeActivity::class.java).apply { }
