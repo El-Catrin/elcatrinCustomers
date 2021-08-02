@@ -53,15 +53,7 @@ class CartActivity : AppCompatActivity(), Serializable {
         startActivity(HomeActivity)
     }
 
-    fun onShoppingCartClick(mi: MenuItem?) {
-        val cartActivity: Intent = Intent(this, CartActivity::class.java).apply { }
-        startActivity(cartActivity)
-    }
 
-    fun onCurrentLocation(mi: MenuItem?) {
-        val currentLocationOnMap: Intent = Intent(this, CurrentLocationOnMap::class.java).apply { }
-        startActivity(currentLocationOnMap)
-    }
 
     fun onOrderListClick(mi: MenuItem?) {
         val ordersActivity: Intent = Intent(this, OrdersActivity::class.java).apply { }

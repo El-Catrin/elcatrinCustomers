@@ -132,11 +132,11 @@ class AuthActivity : AppCompatActivity() {
      // Funcion para navegar al activity principal
     fun showHome(email: String, provider: ProviderType) {
 
-        val homeActivity: Intent = Intent(this, HomeActivity::class.java).apply {
+        val mapActivity: Intent = Intent(this, HomeActivity::class.java).apply {
             putExtra("email", email)
             putExtra("provider", provider)
         }
-        startActivity(homeActivity)
+        startActivity(mapActivity)
 
 
 

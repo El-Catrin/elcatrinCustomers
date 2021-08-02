@@ -44,23 +44,15 @@ class ProductDetailActivity : AppCompatActivity() {
     private fun setListeners() {
         btnComprar.setOnClickListener {
             CartViewModel.addProduct(product)
-            Toast.makeText(this, "Se agrego el producto al carrito de compras", Toast.LENGTH_LONG).show()
+            val cartActivity: Intent = Intent(this, CartActivity::class.java).apply { }
+            startActivity(cartActivity)
+
         }
     }
 
     fun onHomePageClick(mi: MenuItem?) {
         val HomeActivity: Intent = Intent(this, HomeActivity::class.java).apply { }
         startActivity(HomeActivity)
-    }
-
-    fun onShoppingCartClick(mi: MenuItem?) {
-        val cartActivity: Intent = Intent(this, CartActivity::class.java).apply { }
-        startActivity(cartActivity)
-    }
-
-    fun onCurrentLocation(mi: MenuItem?) {
-        val currentLocationOnMap: Intent = Intent(this, CurrentLocationOnMap::class.java).apply { }
-        startActivity(currentLocationOnMap)
     }
 
     fun onOrderListClick(mi: MenuItem?) {

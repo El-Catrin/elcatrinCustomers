@@ -9,19 +9,6 @@
         android:title="Menu"
         app:showAsAction="ifRoom" />
 
-    <item
-        android:id="@+id/navigation_shoppingCart"
-        android:icon="@drawable/ic_baseline_local_grocery_store_24"
-        android:onClick="onShoppingCartClick"
-        android:title="Carrito"
-        app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/navigation_userLocation"
-        android:icon="@drawable/ic_baseline_location_on_24"
-        android:onClick="onCurrentLocation"
-        android:title="Ubicacion"
-        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/navigation_orderList"

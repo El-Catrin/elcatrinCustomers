@@ -47,9 +47,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name="com.elcatrin.customers.activity.CurrentLocationOnMap"
-            android:label="@string/title_activity_current_location_on_map" />
+
         <activity android:name="com.elcatrin.customers.activity.CartActivity"
             android:screenOrientation="portrait"/>
         <activity
@@ -61,14 +59,20 @@
             android:parentActivityName="com.elcatrin.customers.activity.ProductDetailActivity"
             android:screenOrientation="portrait"/>
         <activity android:name="com.elcatrin.customers.activity.ProductDetailActivity"
+            android:parentActivityName=".activity.cashpaymentActivity"
             /> <!-- android:parentActivityName=".ui.CatalogoEmpresas" /> -->
+
+        <activity
+            android:name="com.elcatrin.customers.activity.CurrentLocationOnMap"
+            android:label="@string/title_activity_current_location_on_map"
+            android:parentActivityName=".activity.HomeActivity"
+            />
         <activity
             android:name="com.elcatrin.customers.activity.HomeActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.elcatrin.customers.activity.AuthActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName="com.elcatrin.customers.activity.HomeActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

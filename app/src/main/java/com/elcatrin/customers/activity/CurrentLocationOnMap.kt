@@ -196,6 +196,7 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
 
         guardarUbicacion.setOnClickListener {
             // Add a new document with a generated id.
+
             try {
                 val data = hashMapOf(
                     "Latitude" to currentLocation?.latitude!!,

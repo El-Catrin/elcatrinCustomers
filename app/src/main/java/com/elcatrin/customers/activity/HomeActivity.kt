@@ -67,6 +67,10 @@ class HomeActivity : AppCompatActivity() {
         img_btn_ferreteria.setOnClickListener {
             Toast.makeText(this, "El servicio no se encuentra disponible",  Toast.LENGTH_SHORT).show()
         }
+
+        buttonBuscar.setOnClickListener {
+            Toast.makeText(this, "El servicio no se encuentra disponible",  Toast.LENGTH_SHORT).show()
+        }
     }
 
 
@@ -76,15 +80,6 @@ class HomeActivity : AppCompatActivity() {
         startActivity(HomeActivity)
     }
 
-    fun onShoppingCartClick(mi: MenuItem?) {
-        val cartActivity: Intent = Intent(this, CartActivity::class.java).apply { }
-        startActivity(cartActivity)
-    }
-
-    fun onCurrentLocation(mi: MenuItem?) {
-        val currentLocationOnMap: Intent = Intent(this, CurrentLocationOnMap::class.java).apply { }
-        startActivity(currentLocationOnMap)
-    }
 
     fun onOrderListClick(mi: MenuItem?) {
         val ordersActivity: Intent = Intent(this, OrdersActivity::class.java).apply { }
