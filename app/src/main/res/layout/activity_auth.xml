@@ -4,89 +4,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dise_o_final_interfaz_usuario">
+    android:background="@drawable/bg_white_background"
+    >
 
     <LinearLayout
-        android:id="@+id/lyAuth"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:id="@+id/lyAuth">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="174dp"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="50dp" />
-
-        <EditText
-            android:id="@+id/emailEdittext"
+        <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Correo Electronico"
-            android:inputType="textEmailAddress" />
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/elcatrin_logo"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="20dp" />
 
-        <Space
+        <View
+            android:id="@+id/viewBienvenido"
             android:layout_width="match_parent"
-            android:layout_height="8dp" />
-
-        <EditText
-            android:id="@+id/editPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textPassword" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <LinearLayout
-            android:id="@+id/LycntButton"
-            android:layout_width="match_parent"
-            android:layout_height="174dp"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/singInbutton"
-                android:layout_width="172dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Ingresar"
-                android:background="#FE6D00"
-                android:textColor="#FFFFFF"
-                android:textSize="15sp"
-                android:textStyle="bold"/>
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="16dp" />
-
-            <Button
-                android:id="@+id/googleButton"
-                android:layout_width="237dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@android:color/white"
-                android:drawableStart="@drawable/googlemin"
-                android:gravity="left|center_vertical"
-                android:paddingStart="16dp"
-                android:text="Google"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark" />
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_view_container"
+            tools:ignore="MissingConstraints" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textviewBienvenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="250dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:text="¡Bienvenidos!"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/textviewInicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif"
+            android:text="Inicio de Sesión"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:hint="Ingrese correo"
+            android:paddingLeft="12dp"
+            android:textColorHint="#B2B1B9"
+            android:background="@drawable/bg_input"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="340dp"
+            android:layout_marginEnd="36dp"
+            android:id="@+id/emailEdittext"
+            app:layout_constraintTop_toBottomOf = "@+id/textviewInicio"
+            tools:ignore="InvalidId" />
+
+        <EditText
+            android:hint="Ingrese contraseña"
+            android:paddingLeft="12dp"
+            android:textColorHint="#B2B1B9"
+            android:background="@drawable/bg_input"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="36dp"
+            android:id="@+id/editPassword"
+            android:textStyle="normal"
+            app:layout_constraintTop_toBottomOf = "@+id/textviewInicio"
+            />
+
+        <Button
+            android:id="@+id/singInbutton"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="36dp"
+            android:background="@drawable/bg_bottom_input"
+            android:text="Ingresar"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/textviewInicio" />
+
+        <TextView
+            android:id="@+id/googleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif"
+            android:text="Ingresar Sesión con Google"
+            android:textColor="#e5e5e5"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf = "@+id/textviewInicio"/>
+
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
