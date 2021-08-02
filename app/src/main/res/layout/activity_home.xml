@@ -14,13 +14,14 @@
         android:id="@+id/lyAuth">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageViewHome"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="170dp"
             android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/elcatrin_logo"
+            app:srcCompat="@drawable/undraw_gone_shopping_vwmc"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="20dp" />
+            tools:layout_editor_absoluteY="20dp"
+            tools:ignore="ContentDescription,VectorDrawableCompat" />
 
         <View
             android:id="@+id/viewBienvenido"
