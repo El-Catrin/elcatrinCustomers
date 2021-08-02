@@ -67,6 +67,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.elcatrin.customers.activity.AuthActivity"
+            android:screenOrientation="portrait"
             android:parentActivityName="com.elcatrin.customers.activity.HomeActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
