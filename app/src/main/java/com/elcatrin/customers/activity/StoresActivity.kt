@@ -22,9 +22,9 @@ class StoresActivity : AppCompatActivity() {
         setContentView(R.layout.activity_catalogo_empresas)
 
         adapter = StoreAdapter(this)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-        recyclerView.adapter = adapter
+        recyclerCommerce.layoutManager = LinearLayoutManager(this)
+        recyclerCommerce.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        recyclerCommerce.adapter = adapter
 
         observeData()
     }
