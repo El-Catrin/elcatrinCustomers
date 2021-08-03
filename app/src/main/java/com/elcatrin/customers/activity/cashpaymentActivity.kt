@@ -76,9 +76,9 @@ class cashpaymentActivity : AppCompatActivity(), View.OnClickListener {
 
     fun retornarCambio() {
 
-        var total = order.subtotal + order.deliveryCost
+        var total = order.subtotal + order.delivery_Cost
         Log.i("Subtotal", order.subtotal.toString())
-        Log.i("Costo de envio", order.deliveryCost.toString())
+        Log.i("Costo de envio", order.delivery_Cost.toString())
         Log.i("total", total.toString())
         var cambio = 0.0
         try {

@@ -17,9 +17,9 @@ class BillingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_billing)
 
         billing_price_txt.text =  order.subtotal.toString()
-        billing_delivery_price_txt.text =order.deliveryCost.toString()
+        billing_delivery_price_txt.text =order.delivery_Cost.toString()
         billing_direction_txt.text = order.direction.toString()
-        val suma = order.subtotal + order.deliveryCost
+        val suma = order.subtotal + order.delivery_Cost
         billing_time_txt.text = suma.toString()
 
        //CartViewModel.saveOrder(order) //# How to save a new order

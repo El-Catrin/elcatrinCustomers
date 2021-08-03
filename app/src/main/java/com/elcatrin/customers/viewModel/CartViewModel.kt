@@ -1,12 +1,16 @@
 package com.elcatrin.customers.viewModel
 
+import android.os.Build
 import android.util.Log
+import androidx.annotation.RequiresApi
 import com.elcatrin.customers.activity.CurrentLocationOnMap
 import com.elcatrin.customers.domain.data.network.OrderService
 import com.elcatrin.customers.model.Order
 import com.elcatrin.customers.model.Product
 import com.elcatrin.customers.model.ProductInOrder
 import com.google.firebase.auth.FirebaseAuth
+import java.time.LocalDate
+import java.time.LocalTime
 
 class CartViewModel {
 
@@ -27,31 +31,34 @@ class CartViewModel {
             Log.d("ADD", "${product.name} added")
         }
 
+        @RequiresApi(Build.VERSION_CODES.O)
         fun createOrder() {
             val products = mutableListOf<ProductInOrder>()
+            val currentDate = LocalDate.now()
+            val currentHour = LocalTime.now()
             var subtotal = 0.0
             for (p in productList) {
-                products.add(ProductInOrder(p.id,p.price))
+                products.add(ProductInOrder(p.id,p.storeId,p.cant,p.name,p.price))
                 subtotal += p.price
             }
 
             this.order = Order(
                 uid.toString(),
                 "01",
-                "14.063796, -87.173540",
+                loc.toString(),
                 subtotal,
+                0.0,
                 50.0,
+                0.0,
                 "30m",
-                "01",
+                "",
+                currentDate.toString(),
+                currentHour.toString(),
                 "En Espera",
-                "",
-                "01/07/2021",
-                "16:00",
-                "",
                 products
             )
 
-            Log.d("Order Created", order.deliveryCost.toString())
+            Log.d("Order Created", order.delivery_Cost.toString())
         }
 
         fun getOrder(): Order {

@@ -3,6 +3,7 @@ package com.elcatrin.customers.model
 data class Product(
     val id: String = "000",
     val storeId: String = "000",
+    val cant: String = "000",
     val name: String = "name",
     val price: Double = 0.0,
     val image: String = "image",
