@@ -88,7 +88,8 @@ class cashpaymentActivity : AppCompatActivity(), View.OnClickListener {
                 if (cambio > total) {
 
                     // Se envia la orden al comercio
-                    var resultado = cambio - total
+                   var resultado = cambio - total
+
                     confirmarPedido()
                     Log.i("Estado", "Se envio la orden y el cambio es el siguiente: " + resultado)
                 } else {
@@ -99,10 +100,13 @@ class cashpaymentActivity : AppCompatActivity(), View.OnClickListener {
                 Log.e("Estado", "No se envio la orden")
 
             }
+
+
         } catch (e: IOException) {
 
             e.stackTrace
         }
+
     }
 
     fun onHomePageClick(mi: MenuItem?) {

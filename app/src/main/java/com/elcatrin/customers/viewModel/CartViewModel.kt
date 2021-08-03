@@ -4,6 +4,7 @@ import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
 import com.elcatrin.customers.activity.CurrentLocationOnMap
+import com.elcatrin.customers.activity.cashpaymentActivity
 import com.elcatrin.customers.domain.data.network.OrderService
 import com.elcatrin.customers.model.Order
 import com.elcatrin.customers.model.Product
@@ -20,7 +21,7 @@ class CartViewModel {
         private var order = Order()
         private  val uid = FirebaseAuth.getInstance().currentUser?.uid
         private val loc = CurrentLocationOnMap().currentLocation
-
+        private val change = cashpaymentActivity()
 
         fun getShoppingList(): MutableList<Product> {
             return productList

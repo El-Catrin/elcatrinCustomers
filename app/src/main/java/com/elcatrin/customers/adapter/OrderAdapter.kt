@@ -13,6 +13,7 @@ class OrderAdapter(private val context: Context) :
     RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
     private var orders = mutableListOf<Order>()
 
+
     fun setOrders(data: MutableList<Order>) {
         orders = data
     }
@@ -37,6 +38,8 @@ class OrderAdapter(private val context: Context) :
         fun bindView(order: Order) {
             val suma = order.subtotal + order.delivery_Cost
             itemView.subtotal_txt.text = suma.toString()
+            itemView.fecha_txt.text= order.purchase_Date
+            itemView.orden_txt.text=order.products[0].product_name
         }
     }
 }
