@@ -24,8 +24,8 @@ class ProductsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_catalogo_productos)
 
         adapter = ProductAdapter(this)
-        recyclerProductos.layoutManager = LinearLayoutManager(this)
-        recyclerProductos.adapter = adapter
+        recyclerProducts.layoutManager = LinearLayoutManager(this)
+        recyclerProducts.adapter = adapter
 
         var storeId = intent.getStringExtra("storeId")
         getProductsByStoreId(storeId)

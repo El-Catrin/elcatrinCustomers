@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:layout_margin="10dp">
 
 
     <LinearLayout
@@ -15,10 +15,12 @@
 
         <ImageView
             android:id="@+id/img_logo"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="5dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginTop="10dp"
+            android:background="@drawable/bg_products_bottoms"
             tools:srcCompat="@android:drawable/ic_menu_gallery" />
 
     </LinearLayout>
@@ -32,10 +34,11 @@
             android:id="@+id/text_nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="90dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="110dp"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="15sp"
+            android:textColor="#ffffff"/>
 
     </LinearLayout>
 
@@ -48,9 +51,10 @@
             android:id="@+id/text_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:layout_marginStart="90dp"
-            android:textSize="15sp"/>
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="110dp"
+            android:textSize="12sp"
+            android:textColor="#ffffff"/>
 
     </LinearLayout>
 
@@ -63,7 +67,7 @@
             android:id="@+id/img_empresa"
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="100dp"
             app:srcCompat="@android:drawable/ic_menu_gallery" />
 
     </LinearLayout>
