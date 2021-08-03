@@ -15,6 +15,101 @@
       },
       "oauth_client": [
         {
+          "client_id": "419435467459-hp04mnruk4ei9t9pfbgsjpnobee0h322.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.elcatrin.app_delivery",
+            "certificate_hash": "9726c717f35c0213fd56439ecffa48fd585ac2e1"
+          }
+        },
+        {
+          "client_id": "419435467459-1mfvr9mssbdg92t2jo7nosuha65hj2lu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXRc94rLoh7K2HI79oOmWvQrjNdRt7sjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419435467459-1mfvr9mssbdg92t2jo7nosuha65hj2lu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419435467459:android:c6ec3549fc543ef2dc4876",
+        "android_client_info": {
+          "package_name": "com.elcatrin.commerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419435467459-1mfvr9mssbdg92t2jo7nosuha65hj2lu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXRc94rLoh7K2HI79oOmWvQrjNdRt7sjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419435467459-1mfvr9mssbdg92t2jo7nosuha65hj2lu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419435467459:android:83e9183ceb9a70ffdc4876",
+        "android_client_info": {
+          "package_name": "com.elcatrin.customers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419435467459-1mfvr9mssbdg92t2jo7nosuha65hj2lu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXRc94rLoh7K2HI79oOmWvQrjNdRt7sjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419435467459-1mfvr9mssbdg92t2jo7nosuha65hj2lu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419435467459:android:29a8c3eb7b17a26fdc4876",
+        "android_client_info": {
+          "package_name": "com.elcatrin.drivers"
+        }
+      },
+      "oauth_client": [
+        {
           "client_id": "419435467459-1mfvr9mssbdg92t2jo7nosuha65hj2lu.apps.googleusercontent.com",
           "client_type": 3
         }

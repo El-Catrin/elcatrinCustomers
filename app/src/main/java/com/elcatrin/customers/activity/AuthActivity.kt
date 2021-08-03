@@ -146,8 +146,8 @@ class AuthActivity : AppCompatActivity() {
     fun showcurrentUser(): String? {
 
        val user =  FirebaseAuth.getInstance().currentUser
-        val email = user.email
-        Log.i("Cuenta de usuario", email)
+        val email = user?.email
+        Log.i("Cuenta de usuario", email.toString())
         return email
     }
 
