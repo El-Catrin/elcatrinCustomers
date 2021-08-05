@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.elcatrin.customers">
+    package="com.elcatrin.app_delivery">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -18,22 +18,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.elcatrin.customers.activity.OrdersActivity"></activity>
+        <activity android:name="com.elcatrin.app_delivery.activity.OrdersActivity"></activity>
         <activity
-            android:name="com.elcatrin.customers.activity.BillingActivity"
-            android:parentActivityName="com.elcatrin.customers.activity.methodPayment"
+            android:name="com.elcatrin.app_delivery.activity.BillingActivity"
+            android:parentActivityName="com.elcatrin.app_delivery.activity.methodPayment"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.elcatrin.customers.activity.methodPayment"
-            android:parentActivityName="com.elcatrin.customers.activity.cashpaymentActivity"
+            android:name="com.elcatrin.app_delivery.activity.methodPayment"
+            android:parentActivityName="com.elcatrin.app_delivery.activity.cashpaymentActivity"
             android:screenOrientation="portrait">
             android:parentActivityName=".activity.creditcardActivity"
         </activity>
-        <activity android:name="com.elcatrin.customers.activity.creditcardActivity"
+        <activity android:name="com.elcatrin.app_delivery.activity.creditcardActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="com.elcatrin.customers.activity.cashpaymentActivity"
-            android:parentActivityName="com.elcatrin.customers.activity.HomeActivity"
+            android:name="com.elcatrin.app_delivery.activity.cashpaymentActivity"
+            android:parentActivityName="com.elcatrin.app_delivery.activity.HomeActivity"
             android:screenOrientation="portrait"/>
         <!--
          The API key for Google Maps-based APIs is defined as a string resource.
@@ -48,30 +48,30 @@
             android:value="@string/google_maps_key" />
 
 
-        <activity android:name="com.elcatrin.customers.activity.CartActivity"
+        <activity android:name="com.elcatrin.app_delivery.activity.CartActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="com.elcatrin.customers.activity.StoresActivity"
-            android:parentActivityName="com.elcatrin.customers.activity.ProductsActivity"
+            android:name="com.elcatrin.app_delivery.activity.StoresActivity"
+            android:parentActivityName="com.elcatrin.app_delivery.activity.ProductsActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="com.elcatrin.customers.activity.ProductsActivity"
-            android:parentActivityName="com.elcatrin.customers.activity.ProductDetailActivity"
+            android:name="com.elcatrin.app_delivery.activity.ProductsActivity"
+            android:parentActivityName="com.elcatrin.app_delivery.activity.ProductDetailActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.elcatrin.customers.activity.ProductDetailActivity"
-            android:parentActivityName=".activity.cashpaymentActivity"
+        <activity android:name="com.elcatrin.app_delivery.activity.ProductDetailActivity"
+            android:parentActivityName="com.elcatrin.app_delivery.activity.cashpaymentActivity"
             /> <!-- android:parentActivityName=".ui.CatalogoEmpresas" /> -->
 
         <activity
-            android:name="com.elcatrin.customers.activity.CurrentLocationOnMap"
+            android:name="com.elcatrin.app_delivery.activity.CurrentLocationOnMap"
             android:label="@string/title_activity_current_location_on_map"
-            android:parentActivityName=".activity.HomeActivity"
+            android:parentActivityName="com.elcatrin.app_delivery.activity.HomeActivity"
             />
         <activity
-            android:name="com.elcatrin.customers.activity.HomeActivity"
+            android:name="com.elcatrin.app_delivery.activity.HomeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.elcatrin.customers.activity.AuthActivity"
+            android:name="com.elcatrin.app_delivery.activity.AuthActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
