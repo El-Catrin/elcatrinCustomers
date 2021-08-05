@@ -31,7 +31,7 @@ class CartViewModel {
             val products = mutableListOf<ProductInOrder>()
             var subtotal = 0.0
             for (p in productList) {
-                products.add(ProductInOrder(p.id,p.price))
+                products.add(ProductInOrder(p.id,p.storeId,p.cant,p.name,p.price))
                 subtotal += p.price
             }
 

@@ -23,7 +23,7 @@ class ProductService {
                     val description = row.getString("Product_Desc")
 
                     val product =
-                        Product(id!!, storeId!!, name!!, price!!, picture!!, description!!)
+                        Product(id!!, storeId!!, "", name!!, price!!, picture!!, description!!)
 
                     listData.add(product)
                 }
@@ -51,7 +51,7 @@ class ProductService {
                 val picture = p.getString("Product_Image")
                 val description = p.getString("Product_Desc")
 
-                val product = Product(id!!, storeId!!, name!!, price!!, picture!!, description!!)
+                val product = Product(id!!, storeId!!, "", name!!, price!!, picture!!, description!!)
                 listData.add(product)
                 products.value = listData
             }

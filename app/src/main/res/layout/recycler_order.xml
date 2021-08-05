@@ -19,7 +19,7 @@
             android:layout_height="70dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/logo_3" />
+             />
     </LinearLayout>
 
 
@@ -30,7 +30,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:id="@+id/subtotal_txt"
+            android:id="@+id/orderTotal_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="105dp"
@@ -63,7 +63,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:id="@+id/fecha_txt"
+            android:id="@+id/orderFecha_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="220dp"
@@ -80,7 +80,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:id="@+id/orden_txt"
+            android:id="@+id/orderStatus_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="90dp"
@@ -96,7 +96,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:id="@+id/rubro_txt"
+            android:id="@+id/productName_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="90dp"
@@ -112,7 +112,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:id="@+id/empresa_txt"
+            android:id="@+id/orderTime_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="220dp"

@@ -8,10 +8,10 @@ data class Order(
     val deliveryCost: Double,
     val deliveryTime: String,
     val Driver_ID : String,
-    val Order_Status : String,
+    val order_Status : String,
     val RTN:String,
-    val Purcharse_Date : String,
-    val Purcharse_Hour : String,
+    val purcharse_Date : String,
+    val purcharse_Hour : String,
     val Total: String,
     val products: MutableList<ProductInOrder>
 ) {
