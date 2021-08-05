@@ -1,12 +1,16 @@
 package com.elcatrin.app_delivery.viewModel
 
+import android.os.Build
 import android.util.Log
+import androidx.annotation.RequiresApi
 import com.elcatrin.app_delivery.activity.CurrentLocationOnMap
 import com.elcatrin.app_delivery.domain.data.network.OrderService
 import com.elcatrin.app_delivery.model.Order
 import com.elcatrin.app_delivery.model.Product
 import com.elcatrin.app_delivery.model.ProductInOrder
 import com.google.firebase.auth.FirebaseAuth
+import java.time.LocalDate
+import java.time.LocalTime
 
 class CartViewModel {
 
@@ -16,7 +20,10 @@ class CartViewModel {
         private var order = Order()
         private  val uid = FirebaseAuth.getInstance().currentUser?.uid
         private val loc = CurrentLocationOnMap().currentLocation
-
+        @RequiresApi(Build.VERSION_CODES.O)
+        private val date = LocalDate.now()
+        @RequiresApi(Build.VERSION_CODES.O)
+        private val hour = LocalTime.now()
 
         fun getShoppingList(): MutableList<Product> {
             return productList
@@ -27,11 +34,12 @@ class CartViewModel {
             Log.d("ADD", "${product.name} added")
         }
 
+        @RequiresApi(Build.VERSION_CODES.O)
         fun createOrder() {
             val products = mutableListOf<ProductInOrder>()
             var subtotal = 0.0
             for (p in productList) {
-                products.add(ProductInOrder(p.id,p.price))
+                products.add(ProductInOrder(p.id,p.storeId,p.cant,p.name,p.price))
                 subtotal += p.price
             }
 
@@ -45,8 +53,8 @@ class CartViewModel {
                 "01",
                 "En Espera",
                 "",
-                "01/07/2021",
-                "16:00",
+                date.toString(),
+                hour.toString(),
                 "",
                 products
             )

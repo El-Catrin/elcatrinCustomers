@@ -1,9 +1,11 @@
 package com.elcatrin.app_delivery.activity
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +18,7 @@ import java.io.Serializable
 class CartActivity : AppCompatActivity(), Serializable {
     private lateinit var productAdapter: CartProductAdapter
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
@@ -24,6 +27,7 @@ class CartActivity : AppCompatActivity(), Serializable {
         setListeners()
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun setListeners() {
         place_order_button.setOnClickListener {
             var shoppingList = CartViewModel.getShoppingList()
