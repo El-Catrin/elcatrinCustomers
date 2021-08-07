@@ -26,6 +26,7 @@ import java.util.*
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_method_payment.*
 
 val uid = FirebaseAuth.getInstance().currentUser?.uid
 
@@ -192,10 +193,23 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
      return locatation
 
     }
+
+    fun cashPayment() {
+        btnEfectivo.setOnClickListener {
+            val cashpaymentactivity: Intent = Intent(this, cashpaymentActivity::class.java).apply {
+            }
+            startActivity(cashpaymentactivity)
+            Log.i("Activity", "Se dio clic en el boton de pago en efectivo")
+        }
+
+    }
     private fun savedLocation(){
 
         guardarUbicacion.setOnClickListener {
             // Add a new document with a generated id.
+            val activityhome: Intent = Intent(this, HomeActivity::class.java).apply {
+            }
+            startActivity(activityhome)
 
             try {
                 val data = hashMapOf(
@@ -213,8 +227,6 @@ class CurrentLocationOnMap : AppCompatActivity(), OnMapReadyCallback {
                         Log.w("Error", "Error adding document", e)
                     }
                 Toast.makeText(this, "Se Almaceno la ubicacion", Toast.LENGTH_LONG).show()
-                val activityhom: Intent = Intent(this, HomeActivity::class.java).apply { }
-                startActivity(activityhom)
                 //Toast.makeText(this, data.toString(), Toast.LENGTH_SHORT).show()
             }catch (e: ApiException){
 

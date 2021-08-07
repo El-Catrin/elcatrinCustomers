@@ -59,17 +59,19 @@
             android:parentActivityName="com.elcatrin.app_delivery.activity.cashpaymentActivity"
             /> <!-- android:parentActivityName=".ui.CatalogoEmpresas" /> -->
 
-        <activity
-            android:name="com.elcatrin.app_delivery.activity.CurrentLocationOnMap"
-            android:label="@string/title_activity_current_location_on_map"
-            android:parentActivityName="com.elcatrin.app_delivery.activity.HomeActivity"
-            />
+
         <activity
             android:name="com.elcatrin.app_delivery.activity.HomeActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.elcatrin.app_delivery.activity.CurrentLocationOnMap"
+            android:label="@string/title_activity_current_location_on_map"
+
+            />
+        <activity
             android:name="com.elcatrin.app_delivery.activity.AuthActivity"
             android:screenOrientation="portrait"
+            android:parentActivityName="com.elcatrin.app_delivery.activity.CurrentLocationOnMap"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
