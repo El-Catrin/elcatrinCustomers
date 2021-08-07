@@ -19,11 +19,12 @@
         android:id="@+id/guardarUbicacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#FE6D00"
+        android:background="@drawable/bg_bottom_input"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:padding="8dp"
         android:layout_margin="5dp"
+        android:textSize="15sp"
         android:text="@string/Guardar"
         android:textColor="#ffffff" />
 
