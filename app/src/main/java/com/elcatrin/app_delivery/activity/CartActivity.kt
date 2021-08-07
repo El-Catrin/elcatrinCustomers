@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.elcatrin.app_delivery.R
 import com.elcatrin.app_delivery.adapter.CartProductAdapter
 import com.elcatrin.app_delivery.viewModel.CartViewModel
+import kotlinx.android.synthetic.main.activity_billing.*
 import kotlinx.android.synthetic.main.activity_cart.*
+import kotlinx.android.synthetic.main.activity_cart.place_order_button
 import java.io.Serializable
 
 class CartActivity : AppCompatActivity(), Serializable {
@@ -27,16 +29,17 @@ class CartActivity : AppCompatActivity(), Serializable {
         setListeners()
     }
 
+
     @RequiresApi(Build.VERSION_CODES.O)
     private fun setListeners() {
         place_order_button.setOnClickListener {
             var shoppingList = CartViewModel.getShoppingList()
             if (shoppingList.isNotEmpty()) {
-                val billingActivity: Intent = Intent(this, BillingActivity::class.java).apply { }
+                val methodPayment: Intent = Intent(this, methodPayment::class.java).apply { }
                 CartViewModel.createOrder()
-                startActivity(billingActivity)
+                startActivity(methodPayment)
             }else{
-                Toast.makeText(this, "Carrito de compras vacío", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Carrito de compras se encuentra vacío", Toast.LENGTH_LONG).show()
             }
             }
     }
