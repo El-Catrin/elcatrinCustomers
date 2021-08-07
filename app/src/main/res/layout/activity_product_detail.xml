@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.VistaProductos">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,8 @@
             android:layout_marginTop="20dp"
             app:srcCompat="@drawable/undraw_window_shopping_b96y"
             tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="20dp" />
+            tools:layout_editor_absoluteY="20dp"
+            tools:ignore="VectorDrawableCompat" />
 
         <View
             android:id="@+id/viewBienvenido"
@@ -58,7 +59,7 @@
         <ImageView
             android:id="@+id/imageProducto"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="135dp"
             android:layout_marginTop="250dp"
             android:src="@android:drawable/ic_menu_gallery"
             android:background="@drawable/bg_products_bottoms"/>
@@ -76,10 +77,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="390dp"
             android:layout_weight="1"
             android:text="Nombre Producto"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:textAlignment="center"/>
@@ -92,10 +93,27 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/Monedaprecio"
+            android:id="@+id/Totalprecio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="440dp"
+            android:text="Total:"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Monedaprecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="440dp"
             android:text="L."
             android:textColor="#FFFFFF"
@@ -112,9 +130,71 @@
             android:id="@+id/precioProducto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
+            android:layout_marginStart="72dp"
             android:layout_marginTop="440dp"
-            android:text="Precio"
+            android:text="$"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/substractProduct"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="215dp"
+            android:layout_marginTop="430dp"
+            android:text="-"
+            android:textAlignment="center"
+            android:background="@drawable/bg_bottom_input"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:hint="0"
+            android:paddingLeft="12dp"
+            android:textColorHint="#B2B1B9"
+            android:background="@drawable/bg_input"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="255dp"
+            android:layout_marginTop="430dp"
+            android:layout_marginEnd="40dp"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/addProduct"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="295dp"
+            android:layout_marginTop="430dp"
+            android:text="+"
+            android:textAlignment="center"
+            android:background="@drawable/bg_bottom_input"
             android:textColor="#FFFFFF"
             android:textSize="15sp"
             />
@@ -132,10 +212,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="470dp"
+            android:layout_marginTop="480dp"
             android:text="Descripción"
             android:textColor="#FFFFFF"
-            android:textSize="12sp"
+            android:textSize="15sp"
             />
 
         <Button
