@@ -48,6 +48,7 @@ class CartProductAdapter(private val context: Context) :
             Glide.with(context).load(product.image).into(itemView.imageProducto)
             itemView.product_name_txt.text = product.name
             itemView.product_price_txt.text = product.price.toString()
+            itemView.txt_Cantidad.text= product.cant
         }
     }
 }
