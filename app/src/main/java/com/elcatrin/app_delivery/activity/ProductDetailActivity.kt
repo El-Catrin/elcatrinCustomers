@@ -49,17 +49,23 @@ class ProductDetailActivity : AppCompatActivity() {
 
 
     private fun counter () {
-       // cant = findViewById(R.id.cantProducto)
+        //cant = findViewById(R.id.cantProducto)
+        var cant = 0
         sumar = findViewById(R.id.addProduct)
         restar = findViewById(R.id.substractProduct)
 
         sumar.setOnClickListener {
             cantCheck += 1
+            cant = cantCheck
+            cantProducto.text= cant.toString()
+
         }
 
         restar.setOnClickListener {
             if (cantCheck > 0) {
                 cantCheck--
+                cant = cantCheck
+                cantProducto.text= cant.toString()
             } else {
                 Toast.makeText(this, "Ingresa un cantidad superior", Toast.LENGTH_SHORT).show()
             }
