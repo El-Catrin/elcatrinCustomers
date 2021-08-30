@@ -164,19 +164,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <EditText
-            android:hint="0"
-            android:paddingLeft="12dp"
-            android:textColorHint="#B2B1B9"
-            android:background="@drawable/bg_input"
-            android:inputType="number"
-            android:textAlignment="center"
+        <TextView
+            android:id="@+id/cantProducto"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="255dp"
             android:layout_marginTop="430dp"
             android:layout_marginEnd="40dp"
-            />
+            android:background="@drawable/bg_input"
+            android:hint="0"
+            android:inputType="number"
+            android:paddingLeft="12dp"
+            android:textAlignment="textStart"
+            android:textColorHint="#B2B1B9"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
